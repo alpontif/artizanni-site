@@ -1,6 +1,6 @@
 {
   "_readme": "Paste verification codes / analytics ID here, then push (the workflow rebuilds). Leave blank to switch off. Analytics only loads after a visitor consents.",
-  "domain": "artizanni.com",
+  "domain": "www.artizanni.com",
   "google_site_verification": "",
   "bing_site_verification": "",
   "ga4_measurement_id": "",

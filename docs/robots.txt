@@ -62,4 +62,4 @@ User-agent: *
 Allow: /
 Disallow: /requests/
 
-Sitemap: https://artizanni.com/sitemap.xml
+Sitemap: https://www.artizanni.com/sitemap.xml
