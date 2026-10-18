@@ -1,0 +1,410 @@
+{
+ "reclaim-aerial": {
+  "sector": "drainage",
+  "caption": "Reclamation platform and access embankment advancing across low-lying wetland, Lagos",
+  "w": 1600,
+  "h": 1200
+ },
+ "reclaim-aerial-2": {
+  "sector": "drainage",
+  "caption": "Aerial view of the reclamation works and channel alignment, Lagos",
+  "w": 1600,
+  "h": 1200
+ },
+ "reclaim-dawn": {
+  "sector": "drainage",
+  "caption": "Sand-filled formation to the reclaimed corridor at first light",
+  "w": 1188,
+  "h": 1600
+ },
+ "reclaim-fill": {
+  "sector": "drainage",
+  "caption": "Sand fill placed against the channel lining, with plant at the working front",
+  "w": 1188,
+  "h": 1600
+ },
+ "reclaim-dredge": {
+  "sector": "drainage",
+  "caption": "Dredge discharge lines delivering sand fill to the platform",
+  "w": 1310,
+  "h": 1600
+ },
+ "reclaim-stockpile": {
+  "sector": "drainage",
+  "caption": "Sand stockpiles and discharge point on the reclaimed area",
+  "w": 1268,
+  "h": 1600
+ },
+ "gabion-wall": {
+  "sector": "drainage",
+  "caption": "Gabion wall with geotextile backing to the channel bank",
+  "w": 607,
+  "h": 1080
+ },
+ "gabion-lining": {
+  "sector": "drainage",
+  "caption": "Geotextile and rock lining laid along the channel",
+  "w": 963,
+  "h": 1280
+ },
+ "gabion-excavator": {
+  "sector": "drainage",
+  "caption": "Excavator placing rock to the gabion revetment",
+  "w": 607,
+  "h": 1080
+ },
+ "channel-lined": {
+  "sector": "drainage",
+  "caption": "Lined channel and access corridor during construction",
+  "w": 1268,
+  "h": 1600
+ },
+ "channel-plant": {
+  "sector": "drainage",
+  "caption": "Long-reach plant working the channel through a built-up area",
+  "w": 1268,
+  "h": 1600
+ },
+ "channel-gabion": {
+  "sector": "drainage",
+  "caption": "Gabion revetment running the length of the channel",
+  "w": 1176,
+  "h": 1600
+ },
+ "channel-road": {
+  "sector": "roads",
+  "caption": "Roller and loader forming the corridor beside the new channel",
+  "w": 1539,
+  "h": 1600
+ },
+ "corridor-roller": {
+  "sector": "roads",
+  "caption": "Compaction of the formation alongside the gabion line",
+  "w": 1539,
+  "h": 1600
+ },
+ "loader-gabion": {
+  "sector": "roads",
+  "caption": "Wheel loader and aggregate at the gabion working front",
+  "w": 1176,
+  "h": 1600
+ },
+ "excavator-fill": {
+  "sector": "drainage",
+  "caption": "Tracked excavator handling fill at the reclamation front",
+  "w": 1539,
+  "h": 1600
+ },
+ "plant-lowbed": {
+  "sector": "plant",
+  "caption": "Paver delivered to site on a low-bed trailer",
+  "w": 606,
+  "h": 1080
+ },
+ "cofferdam": {
+  "sector": "water",
+  "caption": "Cofferdam of geomembrane and rock armour in a live watercourse",
+  "w": 960,
+  "h": 1280
+ },
+ "cofferdam-2": {
+  "sector": "water",
+  "caption": "Cofferdam alignment against the barrage structure",
+  "w": 960,
+  "h": 1280
+ },
+ "cofferdam-armour": {
+  "sector": "water",
+  "caption": "Bagged fill and rock armour forming the cofferdam face",
+  "w": 960,
+  "h": 1280
+ },
+ "causeway": {
+  "sector": "water",
+  "caption": "Temporary causeway across the channel, viewed from the structure",
+  "w": 750,
+  "h": 1000
+ },
+ "reservoir": {
+  "sector": "water",
+  "caption": "Impounded reservoir upstream of a dam structure",
+  "w": 1200,
+  "h": 1600
+ },
+ "dewater-apron": {
+  "sector": "water",
+  "caption": "Dewatered apron with starter bars set for new concrete",
+  "w": 1080,
+  "h": 810
+ },
+ "dewater-pump": {
+  "sector": "water",
+  "caption": "Dewatering pump drawing down the work area",
+  "w": 780,
+  "h": 1040
+ },
+ "geomembrane": {
+  "sector": "water",
+  "caption": "Geomembrane being laid against the existing structure",
+  "w": 810,
+  "h": 1080
+ },
+ "trench-rebar": {
+  "sector": "power",
+  "caption": "Reinforcement fixed in a cable trench",
+  "w": 1080,
+  "h": 607
+ },
+ "trench-rebar-2": {
+  "sector": "power",
+  "caption": "Steel fixing in a reinforced concrete trench",
+  "w": 1080,
+  "h": 607
+ },
+ "deck-tower": {
+  "sector": "power",
+  "caption": "Deck formwork with an HV transmission tower beyond",
+  "w": 1080,
+  "h": 810
+ },
+ "stone-rebar": {
+  "sector": "water",
+  "caption": "Rock fill and reinforcement at the works front",
+  "w": 1200,
+  "h": 1600
+ },
+ "duplex-1": {
+  "sector": "residential",
+  "caption": "Detached duplex with stone-coated roof during external finishing",
+  "w": 1080,
+  "h": 810
+ },
+ "duplex-2": {
+  "sector": "residential",
+  "caption": "Entrance bay and sweeping stair under construction",
+  "w": 1080,
+  "h": 810
+ },
+ "duplex-3": {
+  "sector": "residential",
+  "caption": "Arched openings and moulded entrance bay before render",
+  "w": 1080,
+  "h": 810
+ },
+ "duplex-4": {
+  "sector": "residential",
+  "caption": "Duplex at roof completion with scaffold retained",
+  "w": 1080,
+  "h": 810
+ },
+ "duplex-5": {
+  "sector": "residential",
+  "caption": "Classical duplex frontage during finishing",
+  "w": 810,
+  "h": 1080
+ },
+ "duplex-6": {
+  "sector": "residential",
+  "caption": "Two-storey home, render and glazing in progress",
+  "w": 1080,
+  "h": 810
+ },
+ "brick-clad": {
+  "sector": "residential",
+  "caption": "Facing brick plinth and arched windows on completion",
+  "w": 810,
+  "h": 1080
+ },
+ "unit-3": {
+  "sector": "residential",
+  "caption": "Three-storey block with scaffold to the fa\u00e7ade",
+  "w": 1080,
+  "h": 810
+ },
+ "roof-tile": {
+  "sector": "interiors",
+  "caption": "Stone-coated roof sheet: profile detail",
+  "w": 1080,
+  "h": 607
+ },
+ "slab-1": {
+  "sector": "structures",
+  "caption": "Suspended slab reinforcement ready for inspection",
+  "w": 1080,
+  "h": 810
+ },
+ "slab-2": {
+  "sector": "structures",
+  "caption": "Two-way reinforcement across the deck",
+  "w": 1080,
+  "h": 810
+ },
+ "slab-3": {
+  "sector": "structures",
+  "caption": "Deck reinforcement over a long-span frame",
+  "w": 1080,
+  "h": 810
+ },
+ "stair-1": {
+  "sector": "structures",
+  "caption": "Stair flight formed in the deck",
+  "w": 1080,
+  "h": 810
+ },
+ "stair-2": {
+  "sector": "structures",
+  "caption": "Reinforcement to a cast stair flight",
+  "w": 1080,
+  "h": 810
+ },
+ "frame-1": {
+  "sector": "structures",
+  "caption": "Frame interior with formwork and props",
+  "w": 1080,
+  "h": 810
+ },
+ "frame-2": {
+  "sector": "structures",
+  "caption": "Columns and blockwork rising across the plot",
+  "w": 1080,
+  "h": 810
+ },
+ "frame-3": {
+  "sector": "structures",
+  "caption": "Lintels and blockwork between structural columns",
+  "w": 1080,
+  "h": 810
+ },
+ "frame-4": {
+  "sector": "structures",
+  "caption": "Column cages and blockwork at first floor",
+  "w": 1080,
+  "h": 810
+ },
+ "slab-edge": {
+  "sector": "structures",
+  "caption": "Slab and stair reinforcement at the deck edge",
+  "w": 1080,
+  "h": 810
+ },
+ "retail-1": {
+  "sector": "commercial",
+  "caption": "Fa\u00e7ade cladding and signage installation from scaffold",
+  "w": 540,
+  "h": 960
+ },
+ "retail-2": {
+  "sector": "commercial",
+  "caption": "Glazed frontage and canopy to a trading building",
+  "w": 540,
+  "h": 960
+ },
+ "retail-3": {
+  "sector": "commercial",
+  "caption": "Paved access along the completed frontage",
+  "w": 540,
+  "h": 960
+ },
+ "retail-4": {
+  "sector": "commercial",
+  "caption": "Completed ancillary units and covered walkway",
+  "w": 960,
+  "h": 540
+ },
+ "coldroom-1": {
+  "sector": "industrial",
+  "caption": "Insulated panel cold room, freestanding installation",
+  "w": 768,
+  "h": 1024
+ },
+ "coldroom-2": {
+  "sector": "industrial",
+  "caption": "Cold room shell under a steel roof",
+  "w": 1024,
+  "h": 630
+ },
+ "coldroom-3": {
+  "sector": "industrial",
+  "caption": "Lit chilled store interior on completion",
+  "w": 540,
+  "h": 960
+ },
+ "panel-1": {
+  "sector": "industrial",
+  "caption": "Panel-clad process building with loading doors",
+  "w": 960,
+  "h": 540
+ },
+ "panel-2": {
+  "sector": "industrial",
+  "caption": "Loading canopies to the process hall",
+  "w": 960,
+  "h": 540
+ },
+ "yard-1": {
+  "sector": "industrial",
+  "caption": "Covered storage bay under a long-span canopy",
+  "w": 1040,
+  "h": 780
+ },
+ "yard-2": {
+  "sector": "industrial",
+  "caption": "Logistics yard and hardstanding",
+  "w": 1040,
+  "h": 780
+ },
+ "int-1": {
+  "sector": "interiors",
+  "caption": "Polished floor and feature colour wall on completion",
+  "w": 1080,
+  "h": 810
+ },
+ "int-2": {
+  "sector": "interiors",
+  "caption": "Production area with stainless equipment and colour-blocked walls",
+  "w": 1080,
+  "h": 810
+ },
+ "int-3": {
+  "sector": "interiors",
+  "caption": "Colour blocking to the sales floor",
+  "w": 1080,
+  "h": 810
+ },
+ "int-4": {
+  "sector": "interiors",
+  "caption": "Shelving system being installed",
+  "w": 810,
+  "h": 1080
+ },
+ "int-5": {
+  "sector": "interiors",
+  "caption": "Sales floor with gondola units positioned",
+  "w": 810,
+  "h": 1080
+ },
+ "int-6": {
+  "sector": "interiors",
+  "caption": "Granite worktop and tiled base",
+  "w": 810,
+  "h": 1080
+ },
+ "int-7": {
+  "sector": "interiors",
+  "caption": "Polished stone counter installation",
+  "w": 810,
+  "h": 1080
+ },
+ "site-1": {
+  "sector": "design",
+  "caption": "Setting out and excavation to foundation lines",
+  "w": 1080,
+  "h": 810
+ },
+ "site-2": {
+  "sector": "design",
+  "caption": "Site survey on an undeveloped plot",
+  "w": 1040,
+  "h": 780
+ }
+}

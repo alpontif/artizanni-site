@@ -1,0 +1,42 @@
+{
+ "name": "Artizanni — design, engineer, build",
+ "short_name": "Artizanni",
+ "start_url": "/?src=app",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#FAF7F2",
+ "theme_color": "#1A1A1A",
+ "description": "Artizanni is an Abuja-based design-build firm (RC 1065469, since 2012): architecture, civil, structural and MEP engineering, construction, interiors, real estate, project and property management, and an escrow-backed property service for Nigerians abroad.",
+ "icons": [
+  {
+   "src": "/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Start a project",
+   "url": "/start/"
+  },
+  {
+   "name": "Build from abroad",
+   "url": "/diaspora/"
+  },
+  {
+   "name": "My requests",
+   "url": "/requests/"
+  }
+ ]
+}
