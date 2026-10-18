@@ -1,6 +1,6 @@
-// Artizanni service worker, edition f0d2930891
-const V = "art-f0d2930891";
-const SHELL = ["/", "/services/", "/projects/", "/diaspora/", "/about/", "/start/", "/contact/", "/requests/", "/offline.html", "/assets/style.css?v=f0d2930891", "/assets/app.js?v=f0d2930891", "/assets/pwa.js?v=f0d2930891", "/icons/icon-192.png", "/manifest.webmanifest"];
+// Artizanni service worker, edition 08d42ef41a
+const V = "art-08d42ef41a";
+const SHELL = ["/", "/services/", "/projects/", "/diaspora/", "/about/", "/start/", "/contact/", "/requests/", "/offline.html", "/assets/style.css?v=08d42ef41a", "/assets/app.js?v=08d42ef41a", "/assets/pwa.js?v=08d42ef41a", "/icons/icon-192.png", "/manifest.webmanifest"];
 self.addEventListener("install", ev => { ev.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", ev => { ev.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("message", ev => { if (ev.data && ev.data.t === "warm") caches.open(V).then(c => Promise.all(ev.data.urls.map(u => c.match(u).then(hit => hit || c.add(u).catch(() => {}))))); });

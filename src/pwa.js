@@ -65,15 +65,15 @@
 .pwa-sheet::backdrop{background:rgba(10,10,10,.5)}
 .pwa-sheet .hd{background:#1A1A1A;color:#fff;padding:18px 22px;display:flex;gap:14px;align-items:center}
 .pwa-sheet .hd img{width:48px;height:48px;border-radius:12px}
-.pwa-sheet h2{margin:0;font:800 18px/1.2 "Poppins",Arial,system-ui,sans-serif}.pwa-sheet .hd p{margin:2px 0 0;font-size:13px;opacity:.85}
+.pwa-sheet h2{margin:0;font:800 18px/1.2 "Source Serif 4",Georgia,system-ui,sans-serif}.pwa-sheet .hd p{margin:2px 0 0;font-size:13px;opacity:.85}
 .pwa-sheet ol{margin:0;padding:18px 22px 6px 22px;list-style:none;counter-reset:s}
 .pwa-sheet li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;margin:0 0 12px}
 .pwa-sheet li:before{content:counter(s);flex:0 0 26px;height:26px;border-radius:50%;background:#F3E7CF;color:#1A1A1A;font-weight:700;display:grid;place-items:center;font-size:13px}
 .pwa-sheet .ico{display:inline-block;vertical-align:-4px;width:18px;height:18px;color:#8A6420}
 .pwa-sheet .why{margin:0 22px 14px;padding:10px 14px;background:#FAF7F2;border-radius:12px;font-size:13px}
-.pwa-sheet .ft{padding:0 22px 20px;text-align:right}.pwa-sheet button{font:700 14px Poppins,system-ui,sans-serif;background:#C9973A;color:#1A1A1A;border:0;border-radius:999px;padding:10px 22px;cursor:pointer}
+.pwa-sheet .ft{padding:0 22px 20px;text-align:right}.pwa-sheet button{font:700 14px "Libre Franklin",system-ui,sans-serif;background:#252262;color:#fff;border:0;border-radius:999px;padding:10px 22px;cursor:pointer}
 @media (prefers-color-scheme:dark){.pwa-sheet{background:#1E1E1E;color:#EEE9E1}.pwa-sheet li:before{background:#3A2F1C;color:#EEE9E1}.pwa-sheet .ico{color:#E2B865}.pwa-sheet .why{background:#2a2620}}
-.pwa-toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);z-index:2147483000;background:#1A1A1A;color:#fff;font:600 14px Poppins,system-ui,sans-serif;padding:12px 18px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.3);max-width:calc(100vw - 32px);text-align:center}
+.pwa-toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);z-index:2147483000;background:#1A1A1A;color:#fff;font:600 14px "Libre Franklin",system-ui,sans-serif;padding:12px 18px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.3);max-width:calc(100vw - 32px);text-align:center}
 .pwa-banner{position:fixed;left:50%;bottom:16px;z-index:2147482000;width:min(560px,calc(100vw - 24px));transform:translate(-50%,calc(100% + 40px));transition:transform .35s cubic-bezier(.2,.8,.2,1);
   display:grid;grid-template-columns:48px 1fr auto;gap:12px 14px;align-items:center;background:#fff;color:#1A1A1A;border-radius:20px;padding:14px 40px 14px 14px;
   box-shadow:0 18px 50px rgba(26,26,26,.3),0 0 0 1px rgba(26,26,26,.08);font:14px/1.4 Arial,system-ui,sans-serif}
@@ -81,8 +81,8 @@
 .pwa-banner img{width:48px;height:48px;border-radius:12px}
 .pwa-banner .tx b{display:block;color:#1A1A1A;font-size:15px}.pwa-banner .tx span{color:#4A5568;font-size:13px}
 .pwa-banner .ac{display:flex;flex-direction:column;gap:4px}
-.pwa-banner .go{font:700 14px Poppins,system-ui,sans-serif;background:#C9973A;color:#1A1A1A;border:0;border-radius:999px;padding:9px 20px;cursor:pointer;white-space:nowrap}
-.pwa-banner .no{font:500 12.5px Poppins,system-ui,sans-serif;background:none;border:0;color:#4A5568;cursor:pointer;padding:2px}
+.pwa-banner .go{font:700 14px "Libre Franklin",system-ui,sans-serif;background:#252262;color:#fff;border:0;border-radius:999px;padding:9px 20px;cursor:pointer;white-space:nowrap}
+.pwa-banner .no{font:500 12.5px "Libre Franklin",system-ui,sans-serif;background:none;border:0;color:#4A5568;cursor:pointer;padding:2px}
 .pwa-banner .x{position:absolute;top:6px;right:8px;width:30px;height:30px;border:0;background:none;color:#4A5568;font-size:22px;line-height:1;cursor:pointer;border-radius:50%}
 .pwa-banner button:focus-visible{outline:3px solid #1A1A1A;outline-offset:2px}
 html.pwa-on .wa-float{bottom:calc(var(--pwa-h,0px) + 28px)!important;transition:bottom .35s}
