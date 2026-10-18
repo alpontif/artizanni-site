@@ -21,19 +21,20 @@
 - [Project & Property Management | Artizanni](https://artizanni.com/services/project-management/): Cost, programme and quality control for your project, then care of the asset. Artizanni, Abuja: If you already have a designer or a contractor, we can stand on your side of the table: plan the work, check t
 - [Built-Environment Personnel | Artizanni](https://artizanni.com/services/personnel/): Engineers, supervisors and skilled artisans supplied and managed for your project. Artizanni, Abuja: Projects stall when the right people are not on site. We supply and manage qualified engineers, site superviso
 - [Secure Spaces | Artizanni](https://artizanni.com/services/secure-spaces/): Discreet design and construction of safe rooms for homes and offices. Artizanni, Abuja: We design and build protected rooms within new and existing buildings. This work is handled on a strict need-t
-- [Projects | Artizanni](https://artizanni.com/projects/): Artizanni projects: water and dam works, substation civils, drainage and reclamation, homes, RC frames, retail, cold rooms, interiors, roads and design consultancy in Nigeria.
+- [Projects | Artizanni](https://artizanni.com/projects/): Artizanni projects: water and dam works, substation civils, drainage and reclamation, homes, RC frames, building services, retail, cold rooms, interiors, roads and design consultancy in Nigeria.
 - [Water Resources & Marine Works projects | Artizanni](https://artizanni.com/projects/water/): Cofferdams, barrage works, dam rehabilitation and reservoir expansion, built in the wet. Artizanni work on record in Nigeria.
 - [Power Infrastructure projects | Artizanni](https://artizanni.com/projects/power/): Civil and structural works for 132/33kV transmission substations. Artizanni work on record in Nigeria.
 - [Drainage, Erosion Control & Reclamation projects | Artizanni](https://artizanni.com/projects/drainage/): Channelisation, gabion revetment and land reclamation: building ground where there was water. Artizanni work on record in Nigeria.
-- [Residential Development projects | Artizanni](https://artizanni.com/projects/residential/): Detached and semi-detached homes and estates, from setting out to handover. Artizanni work on record in Nigeria.
-- [Structures in Frame projects | Artizanni](https://artizanni.com/projects/structures/): Reinforced concrete from foundation to roof. Artizanni work on record in Nigeria.
 - [Commercial & Retail projects | Artizanni](https://artizanni.com/projects/commercial/): Trading buildings that must open on the date advertised. Artizanni work on record in Nigeria.
 - [Industrial, Warehousing & Cold Chain projects | Artizanni](https://artizanni.com/projects/industrial/): Portal frames, clear-span stores, insulated cold rooms and the yards that serve them. Artizanni work on record in Nigeria.
+- [Residential Development projects | Artizanni](https://artizanni.com/projects/residential/): Detached and semi-detached homes and estates, from setting out to handover. Artizanni work on record in Nigeria.
+- [Structures in Frame projects | Artizanni](https://artizanni.com/projects/structures/): Reinforced concrete from foundation to roof. Artizanni work on record in Nigeria.
+- [Mechanical & Electrical projects | Artizanni](https://artizanni.com/projects/mep/): Ductwork fabricated on site, services routed before ceilings close, conduit set into the structure as it rises. Artizanni work on record in Nigeria.
 - [Interiors, Fit-out & Finishes projects | Artizanni](https://artizanni.com/projects/interiors/): The last ten per cent: the finishes your clients and family actually touch. Artizanni work on record in Nigeria.
 - [Roads, Paving & External Works projects | Artizanni](https://artizanni.com/projects/roads/): Access roads, estate carriageways and hardstanding. Artizanni work on record in Nigeria.
 - [Design & Consultancy projects | Artizanni](https://artizanni.com/projects/consultancy/): Feasibility, design, quantities and programmes before anyone breaks ground. Artizanni work on record in Nigeria.
 - [Build in Nigeria from abroad with escrow | Artizanni](https://artizanni.com/diaspora/): For Nigerians in the UK, US, Canada and elsewhere: build or buy in Nigeria with funds held in escrow by First Trustees and released only against verified milestones.
-- [About | Artizanni](https://artizanni.com/about/): Artizanni Business Services Limited (RC 1065469), an Abuja design-build and engineering firm founded in 2012 and led by Engr. Akolade Maruf Ibrahim, COREN R29685.
+- [About | Artizanni](https://artizanni.com/about/): Artizanni Business Services Limited (RC 1065469), an Abuja design-build and engineering firm founded in 2012 and led by Engr. Akolade Maruf Ibrahim, COREN R29685. Mission, people, plant and compliance.
 - [Start a project | Artizanni](https://artizanni.com/start/): Tell Artizanni about your building, interiors, land or diaspora project and send it on WhatsApp or email with a reference number.
 - [Contact | Artizanni](https://artizanni.com/contact/): Contact Artizanni in Utako, Abuja: WhatsApp or call +234 803 920 4361, email aec@artizanni.com.
 - [Privacy notice | Artizanni](https://artizanni.com/privacy/): How Artizanni Business Services Limited collects and uses personal information under the Nigeria Data Protection Act 2023.
@@ -57,6 +58,7 @@ Briefs, concepts, construction drawings and development-permit packs. Good archi
 - Planning and development-permit drawing packs
 - Construction drawings, schedules and specifications
 - Design for phased or incremental building
+- Value engineering during design, so the drawings match the budget
 
 ### Civil, Structural & MEP Engineering
 Structural design, civil works, drainage, foundations and building services. Engineering is our founding discipline. The practice is led by a COREN-registered civil and structural engineer, and our designs come from people who also stand on site when the concrete is poured.
@@ -66,6 +68,7 @@ Structural design, civil works, drainage, foundations and building services. Eng
 - Geotechnical / soil investigation coordination
 - Mechanical, electrical and plumbing (MEP) design and coordination, including solar and back-up power
 - Structural integrity assessments of existing buildings
+- Independent technical review of designs prepared by others
 
 ### Construction & Civil Works
 Buildings, substations, dams, drainage, reclamation and roads, self-delivered. We build what we design, and we build for other designers too. Our site teams have delivered reinforced-concrete frames, power-infrastructure civils, dam rehabilitation, cofferdams, channelisation and land reclamation.
@@ -87,11 +90,13 @@ Interior design, fit-out, joinery and furnishing in Abuja, Lagos and Port Harcou
 
 ### Real Estate & Land
 Land sourcing, title verification, acquisition and development. Most property losses in Nigeria start before anything is built: the wrong title, the wrong seller or the wrong plot. We help you find, verify and secure land or property, then develop it.
-- Land and property sourcing against your brief
+- Land and property sourcing against your brief, with comparable-price analysis and negotiation support
 - Title due diligence with a lawyer and surveyor (C of O, Governor's consent, survey charting, excision)
 - Acquisition, documentation and perfection of title
 - Feasibility studies and development appraisals
 - Estate planning, design and delivery
+- Technical due diligence before purchase: site, soil, drainage, access and structural condition
+- Sales advisory for owners disposing of property
 - Customer due diligence (KYC/AML) as required for real-estate transactions
 
 ### Project & Property Management
@@ -100,7 +105,8 @@ Cost, programme and quality control for your project, then care of the asset. If
 - Bills of quantities, cost plans and valuation checks
 - Site supervision, quality inspections and progress reports with photos
 - Contract administration, variations and payment certificates
-- Property and facility management, maintenance planning
+- Property and facility management: tenant sourcing and screening, lease administration, rent collection
+- Planned and reactive maintenance with documented work orders and service-charge reporting
 - Long-term estate management strategy
 
 ### Built-Environment Personnel
@@ -163,6 +169,9 @@ For Nigerians abroad: your money is held in escrow by First Trustees and release
 26. Isaac Udezue and Associates Ltd: Rehabilitation and reservoir expansion of Buyam Dam, Cross River State (Sub-contractor)
 
 ## FAQ
+
+Q: Do I pay anything up front?
+A: No. There are no upfront payments. Once scope and price are agreed, construction funds go into escrow with First Trustees, and every payment after that is pro rata against certified progress.
 
 Q: Who holds my money?
 A: Your construction funds are paid into an escrow arrangement with First Trustees, an independent trustee company, not into Artizanni's account. Funds are released to us in stages, only when the milestone agreed in your contract has been completed and evidenced.

@@ -10,7 +10,8 @@ import hashlib, html, json, pathlib, shutil, sys, datetime
 
 ROOT = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
-from content import SITE, SERVICES, DIASPORA, SECTORS, REGISTER, STAGES, MILESTONES, DIASPORA_FAQ, GENERAL_FAQ, STATES, GROUP  # noqa
+from content import (SITE, SERVICES, DIASPORA, SECTORS, REGISTER, STAGES, MILESTONES, DIASPORA_FAQ, GENERAL_FAQ, STATES, GROUP,  # noqa
+                     REGISTER_STATUS, PROFILE, PLANT, NUMBERS, JOURNEY, ENGAGEMENTS, CLIENTS)
 
 DOCS = ROOT / "docs"
 CFG = json.loads((ROOT / "site-config.json").read_text())
@@ -199,6 +200,15 @@ def faq_ld(items):
     return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in items]}
 
 SEC = {s["slug"]: s for s in SECTORS}
+def clients_strip():
+    return ('<div class="clients"><p class="eyebrow">Selected clients &amp; partners</p><ul>' +
+            "".join(f'<li><b>{E(n)}</b><span>{E(t)}</span></li>' for n, t in CLIENTS) +
+            '</ul><p class="small muted">As listed in our Corporate Profile 2026. Engagements are held under NDA; references on request.</p></div>')
+def md_quote(R, cls="s"):
+    return (f'<section class="{cls} quote"><div class="wrap"><figure class="pull"><blockquote><p>{E(PROFILE["md_quote"])}</p></blockquote>'
+            f'<figcaption><b>{E(SITE["md"])}</b><span>Founder and Managing Director · {E(SITE["md_post"])}</span></figcaption></figure></div></section>')
+def journey_html():
+    return '<ol class="journey">' + "".join(f'<li><span class="tag">{E(a)}</span><h3>{E(b)}</h3><p>{E(c)}</p></li>' for a, b, c in JOURNEY) + '</ol>' 
 SECURE_LINE = lambda R: f'<div class="aside-line">{ICONS["shield"]}<p><b>Secure spaces.</b> We also design and build protected rooms for homes and offices, on a strictly confidential basis.</p><a class="btn btn-line btn-sm" href="{R}services/secure-spaces/">Learn more</a></div>'
 def sector_photos(slug):
     return [k for k, v in PH.items() if v["sector"] == slug]
@@ -222,11 +232,11 @@ def build_home():
 </div></section>'''
     body = f'''
 <section class="s" style="padding-bottom:0"><div class="wrap">
-<div class="stats"><div><b>2012</b><span>Incorporated in Abuja (RC 1065469)</span></div><div><b>26<em>+</em></b><span>Engagements in our recorded contracting register</span></div><div><b>10</b><span>Sectors of work, from dams and substations to fit-outs</span></div><div><b>M0–M8</b><span>Escrow milestones for clients building from abroad</span></div></div>
+<div class="stats"><div><b>2012</b><span>Incorporated in Abuja (RC 1065469)</span></div><div><b>26<em>+</em></b><span>Engagements in our recorded contracting register</span></div><div><b>11</b><span>Sectors of delivered work, from marine civils to retail fit-out</span></div><div><b>₦0</b><span>Taken up front. Every payment follows certified progress</span></div></div>
 </div></section>
 
 <section class="s"><div class="wrap">
-<div class="shead"><div><p class="eyebrow">01 / What we do</p><h2>One firm from the first sketch to the last snag.</h2><p class="lede">Appoint us for the whole project, or for the part you need. Either way, design, cost and site work are checked by the same engineers.</p></div><a class="btn btn-line" href="{R}services/">All services {ARW}</a></div>
+<div class="shead"><div><p class="eyebrow">01 / What we do</p><h2>One firm from land to keys.</h2><p class="lede">Most property failures in Nigeria are coordination failures, not engineering failures: land bought on a bad title, drawings that ignore the engineer, a contractor building to a different standard, an owner with no one watching. We remove those seams. Appoint us for the whole project or for the part you need.</p></div><a class="btn btn-line" href="{R}services/">All services {ARW}</a></div>
 <div class="grid g3">{"".join(svc_cards)}</div>
 {SECURE_LINE(R)}
 </div></section>
@@ -242,6 +252,7 @@ def build_home():
 <a class="ph c" href="{R}projects/drainage/">{pic(R, "gabion-wall", sizes="(max-width:760px) 50vw, 33vw")}</a>
 </div>
 <div class="grid g4" style="margin-top:48px">{sectors}</div>
+{clients_strip()}
 </div></section>
 
 <section class="s dark"><div class="wrap">
@@ -257,6 +268,7 @@ def build_home():
 <div>{fig(R, "duplex-1", "ratio-43", sizes="(max-width:900px) 100vw, 50vw")}</div>
 </div></section>
 
+{md_quote(R)}
 <section class="s alt"><div class="wrap">
 <div class="shead"><div><p class="eyebrow">05 / Why clients appoint us</p><h2>Engineers who build, builders who document.</h2></div></div>
 <div class="grid g4">
@@ -277,7 +289,10 @@ def build_services():
     body = phead(R, trail, "Services", "Everything a building needs, from one accountable firm.",
                  "Appoint us end to end under design and build, or for one discipline. Every service is run by registered professionals and documented to the same standard.") + f'''
 <section class="s"><div class="wrap"><div class="grid g3">{cards}</div>{SECURE_LINE(R)}</div></section>
-<section class="s alt"><div class="wrap split"><div><p class="eyebrow">Common questions</p><h2>Before you appoint us</h2></div><div>{faq_html(GENERAL_FAQ)}</div></div></section>
+<section class="s alt"><div class="wrap split"><div><p class="eyebrow">Ways to work with us</p><h2>Pick the engagement that fits.</h2><p class="lede">Every engagement starts with a consultation to set your objective, budget and timeline. Then we propose the model that fits.</p>
+<p class="eyebrow" style="margin-top:28px">Who we serve</p><p>{E(PROFILE["serves"])}</p></div>
+<div class="eng">{"".join(f'<div><h3>{E(a)}</h3><p>{E(b)}</p></div>' for a, b in ENGAGEMENTS)}</div></div></section>
+<section class="s"><div class="wrap split"><div><p class="eyebrow">Common questions</p><h2>Before you appoint us</h2></div><div>{faq_html(GENERAL_FAQ)}</div></div></section>
 {cta(R)}'''
     page("services/", "Services", "Design and build, architecture, civil, structural and MEP engineering, construction, interiors, real estate, project management, personnel and secure spaces in Nigeria.", body, active="services/", ld=[crumbs_ld(trail), faq_ld(GENERAL_FAQ)], prio="0.9")
 
@@ -336,23 +351,26 @@ def register_table(rows, filters=True):
         used = [s for s in SECTORS if any(r[4] == s["slug"] for r in rows)]
         chips = '<div class="reg-tools" role="group" aria-label="Filter by sector"><button class="chip" type="button" data-filter="all" aria-pressed="true">All ' + str(len(rows)) + '</button>' + \
                 "".join(f'<button class="chip" type="button" data-filter="{s["slug"]}" aria-pressed="false">{E(s["name"].split(",")[0].split(" &")[0])} {len([r for r in rows if r[4]==s["slug"]])}</button>' for s in used) + '</div>'
-    trs = "".join(f'<tr data-sector="{r[4]}"><td>{r[0]:02d}</td><td class="cl">{E(r[1])}</td><td>{E(r[2])}</td><td class="ro">{E(r[3])}</td></tr>' for r in rows)
-    return chips + f'<div style="overflow-x:auto"><table class="reg" data-register><thead><tr><th>No.</th><th>Client</th><th>Engagement</th><th>Role</th></tr></thead><tbody>{trs}</tbody></table></div>'
+    st = lambda n: REGISTER_STATUS.get(n, "Completed")
+    trs = "".join(f'<tr data-sector="{r[4]}"><td>{r[0]:02d}</td><td class="cl">{E(r[1])}</td><td>{E(r[2])}</td><td class="ro">{E(r[3])}</td><td><span class="st {st(r[0]).lower()}">{st(r[0])}</span></td></tr>' for r in rows)
+    return chips + f'<div style="overflow-x:auto"><table class="reg" data-register><thead><tr><th>No.</th><th>Client</th><th>Engagement</th><th>Role</th><th>Status</th></tr></thead><tbody>{trs}</tbody></table></div>'
 
 def build_projects():
     path = "projects/"; R = root_for(path); trail = [("Projects", path)]
     cards = "".join(f'<a class="sector" href="{R}projects/{s["slug"]}/"><div class="ph">{pic(R, s["hero"], sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 33vw")}</div><h3>{E(s["name"])}<small>{len(sector_photos(s["slug"]))} photos</small></h3><p>{E(s["standfirst"])}</p></a>' for s in SECTORS)
-    body = phead(R, trail, "Projects", "Work on record across ten sectors.",
-                 "From cofferdams in live rivers to fitted-out retail floors. Photographs come from our own site records; captions describe only what each photograph shows.") + f'''
-<section class="s"><div class="wrap"><div class="grid g3">{cards}</div></div></section>
+    nums = "".join(f'<div><b>{E(a)}</b><span>{E(b)}</span></div>' for a, b in NUMBERS)
+    body = phead(R, trail, "Projects", "Built, not rendered.",
+                 "Eleven sectors of delivered work, from cofferdams in live rivers to fitted-out retail floors. The photographs are from our own sites, most taken by the people running them. Reinforcement is shown before it is covered, and mud where there was mud.") + f'''
+<section class="s" style="padding-bottom:0"><div class="wrap"><div class="stats">{nums}</div></div></section>
+<section class="s"><div class="wrap"><div class="grid g3">{cards}</div>{clients_strip()}</div></section>
 <section class="s alt" id="register"><div class="wrap">
-<div class="shead"><div><p class="eyebrow">Contracting register</p><h2>Recorded engagements</h2><p class="lede">Transcribed from the EPC contracting experience schedule in our corporate profile. Many of these were delivered as design consultant or specialist sub-contractor to the client named.</p></div></div>
+<div class="shead"><div><p class="eyebrow">Contracting register</p><h2>Recorded engagements</h2><p class="lede">The 26 engagements in our Corporate Profile 2026, delivered as design consultant, design-and-build contractor or specialist sub-contractor. Status is as printed in the profile.</p></div></div>
 {register_table(REGISTER)}
 <p class="small muted" style="margin-top:14px">Recent residential, commercial and interiors projects shown in the photographs are not all listed in this register. Contract values are shared with prospective clients on request.</p>
 </div></section>
 {cta(R)}'''
     ld = [crumbs_ld(trail), {"@type": "ItemList", "name": "Artizanni project sectors", "itemListElement": [{"@type": "ListItem", "position": i, "url": BASE + f'projects/{s["slug"]}/', "name": s["name"]} for i, s in enumerate(SECTORS, 1)]}]
-    page(path, "Projects", "Artizanni projects: water and dam works, substation civils, drainage and reclamation, homes, RC frames, retail, cold rooms, interiors, roads and design consultancy in Nigeria.", body, active=path, ld=ld, prio="0.9")
+    page(path, "Projects", "Artizanni projects: water and dam works, substation civils, drainage and reclamation, homes, RC frames, building services, retail, cold rooms, interiors, roads and design consultancy in Nigeria.", body, active=path, ld=ld, prio="0.9")
 
     for s in SECTORS:
         path = f'projects/{s["slug"]}/'; R = root_for(path); trail = [("Projects", "projects/"), (s["name"], path)]
@@ -401,14 +419,15 @@ def build_diaspora():
              ("05", "Escrow deed", "Agreed with you and First Trustees. You fund the escrow, not Artizanni."),
              ("06", "Build & release", "Weekly reports; a verification pack and release at each milestone, through to handover.")]
     body = phead(R, trail, "For Nigerians abroad", "Build at home without sending money on trust.",
-                 "Your construction funds are held in escrow by First Trustees and released to us one verified milestone at a time.", photo="duplex-5",
+                 "If you cannot be on site, we are your presence on site. Your construction funds are held in escrow by First Trustees and released to us one verified milestone at a time.", photo="duplex-5",
                  extra=f'<div class="btns" style="margin-top:24px"><a class="btn btn-gold" href="{R}start/?service=diaspora">Book a discovery call {ARW}</a><a class="btn btn-line" style="color:#fff" href="#how">See how it works</a></div>') + f'''
 <section class="s"><div class="wrap split">
 <div><p class="eyebrow">The problem</p><h2>Distance makes building expensive in ways a budget does not show.</h2></div>
 <div class="prose"><p>Building from abroad usually means sending money to a relative, an agent or a contractor and hoping the photographs are real. Unverified title, inflated progress and funds diverted to other jobs are common stories.</p>
 <p>Our service is built so that you do not have to rely on any one person's honesty, including ours. The money sits with an independent trustee, the land is checked by a lawyer, and every release is backed by evidence you can review before it is paid.</p></div>
 </div></section>
-<section class="s alt" id="how"><div class="wrap"><div class="shead"><div><p class="eyebrow">How your money moves</p><h2>Escrow first, evidence always.</h2></div></div>{FLOW_SVG}</div></section>
+<section class="s alt" id="how"><div class="wrap"><div class="shead"><div><p class="eyebrow">How your money moves</p><h2>Escrow first, evidence always.</h2><p class="lede">{E(PROFILE["payments"])}</p></div></div>{FLOW_SVG}
+<div style="margin-top:48px"><p class="eyebrow">The three-stage journey</p>{journey_html()}</div></div></section>
 <section class="s"><div class="wrap"><div class="shead"><div><p class="eyebrow">Milestones</p><h2>Nine release points, each with its own evidence.</h2><p class="lede">Our default schedule. The exact milestones and values are set in your contract and escrow deed.</p></div></div><ol class="ms">{ms}</ol></div></section>
 <section class="s dark"><div class="wrap"><div class="shead"><div><p class="eyebrow">Getting started</p><h2>From first call to first release</h2></div></div><ol class="steps">{"".join(f"<li><b>{n}</b><h3>{E(t)}</h3><p>{E(d)}</p></li>" for n, t, d in steps)}</ol></div></section>
 <section class="s"><div class="wrap split"><div><p class="eyebrow">What you receive</p><h2>Reporting you can check from anywhere</h2>
@@ -424,43 +443,65 @@ def build_diaspora():
 # ================================================================== ABOUT
 def build_about():
     path = "about/"; R = root_for(path); trail = [("About", path)]
-    body = phead(R, trail, "About Artizanni", "An engineering practice that builds.",
+    plant = "".join(f'<div><dt>{E(k)}</dt><dd>{E(v)}</dd></div>' for k, v in PLANT)
+    body = phead(R, trail, "About Artizanni", "A contractor that designs.",
                  "Artizanni Business Services Limited was incorporated in Abuja on 17 September 2012. We design, engineer and build, and we stay accountable for all three.") + f'''
 <section class="s"><div class="wrap split">
-<div class="prose"><p class="lede" style="color:var(--fg)">We started as engineers: substation foundations, dam rehabilitation, drainage and structural design. That discipline now runs through everything we do, from duplexes and retail buildings to fit-outs, land acquisition and our escrow-backed service for Nigerians abroad.</p>
-<p>Our recorded work includes design consultancy and specialist sub-contracting for power transmission, water resources and real-estate clients, and design-and-build delivery of homes, commercial and industrial buildings. Artizanni Interiors carries our finishing and fit-out work in Abuja, Lagos and Port Harcourt.</p>
-<p>We believe the cheapest building is the one built once. So we put engineers in charge, measure before we price, inspect before we pour and document as we go.</p></div>
+<div class="prose">{"".join(f"<p>{E(x)}</p>" for x in PROFILE["story"])}
+<p>Today the practice works across three connected markets: infrastructure and building construction across Nigeria; property development and project management for Nigerians abroad, structured so clients carry no upfront capital risk; and premium interiors through Artizanni Interiors. One discipline binds them: engineering rigour at every stage, and what is agreed on paper is what is delivered on site.</p></div>
 <div>{fig(R, "frame-4", "ratio-43", sizes="(max-width:900px) 100vw, 50vw")}</div>
 </div></section>
-<section class="s alt"><div class="wrap split">
+<section class="s alt"><div class="wrap"><div class="grid g3 mvh">
+<div><p class="eyebrow">Our mission</p><p class="big">{E(PROFILE["mission"])}</p></div>
+<div><p class="eyebrow">Our vision</p><p class="big">{E(PROFILE["vision"])}</p></div>
+<div><p class="eyebrow">How we work</p><p class="big">{E(PROFILE["how"])}</p></div>
+</div></div></section>
+{md_quote(R)}
+<section class="s"><div class="wrap split">
 <div><p class="eyebrow">Leadership</p><h2>{E(SITE["md"])}</h2><p class="muted" style="font-family:var(--mono);font-size:.85rem">Founder and Managing Director · {E(SITE["md_post"])}</p>
-<p>A COREN-registered civil and structural engineer and Project Management Professional, Engr. Ibrahim leads the practice's engineering and delivery. He is a member of the Nigerian Society of Engineers.</p>
+<p>A COREN-registered civil and structural engineer, member of the Nigerian Society of Engineers and certified Project Management Professional, with more than fifteen years in Nigerian construction, heavy-equipment operations and engineering practice. He has led Artizanni from a specialist construction practice into an integrated design-build, infrastructure and property group.</p>
 <p class="muted">{E(SITE["md_quals"])}</p></div>
+<div><p class="eyebrow">People</p><h2>One delivery team</h2>
+<ul class="ticks"><li>{E(PROFILE["team"])}</li><li>Collective memberships: {E(PROFILE["memberships"])}.</li><li>{E(PROFILE["workforce"])}</li><li>{E(PROFILE["model"])}</li></ul></div>
+</div></section>
+<section class="s alt"><div class="wrap split">
+<div><p class="eyebrow">Plant &amp; capability</p><h2>Owned plant shortens the programme.</h2><p class="lede">Hired plant arrives when the hire company can spare it. We hold our own earthmoving and compaction plant, bought through established dealer channels, and hire specialist equipment only where a scheme needs it.</p>
+<dl class="facts">{plant}</dl></div>
+<div>{fig(R, "loader-gabion", "ratio-43", sizes="(max-width:900px) 100vw, 50vw")}
+<p class="eyebrow" style="margin-top:28px">Coverage</p><p>{E(PROFILE["coverage"])}</p>
+<p class="eyebrow" style="margin-top:20px">Who we build for</p><p>{E(PROFILE["serves"])}</p></div>
+</div></section>
+<section class="s"><div class="wrap split">
+<div><p class="eyebrow">Governance &amp; compliance</p><h2>Registered, compliant and documented for prequalification.</h2>
+<p class="muted">{E(PROFILE["nda"])}</p>
+<div class="dl"><a class="btn btn-ink" href="{R}downloads/Artizanni-Corporate-Profile-2026.pdf" download>Download the Corporate Profile 2026 <span class="small">(PDF, 7.6 MB)</span></a></div></div>
 <dl class="facts">
-<div><dt>Company</dt><dd>Artizanni Business Services Limited</dd></div>
+<div><dt>Company</dt><dd>Artizanni Business Services Limited, a private company limited by shares under CAMA</dd></div>
 <div><dt>Registration</dt><dd>CAC RC 1065469, incorporated 17 Sep 2012</dd></div>
 <div><dt>Head office</dt><dd>{E(SITE["address"])}</dd></div>
 <div><dt>Engineer of record</dt><dd>COREN Reg. No. R29685</dd></div>
 <div><dt>AML / CFT</dt><dd>Registered with SCUML (real estate is a designated business)</dd></div>
-<div><dt>Tax</dt><dd>Current tax clearance certificate on file</dd></div>
+<div><dt>Tax</dt><dd>Compliant taxpayer with a current tax clearance certificate</dd></div>
 <div><dt>Escrow partner</dt><dd>First Trustees</dd></div>
-<div><dt>Accountants</dt><dd>iMetrics Ltd, Ikoyi, Lagos</dd></div>
+<div><dt>Banking &amp; accounts</dt><dd>Guaranty Trust Bank · iMetrics Ltd (accountants)</dd></div>
+<div><dt>Plant supply</dt><dd>SMT Nigeria Ltd</dd></div>
 </dl>
 </div></section>
-<section class="s"><div class="wrap"><div class="shead"><div><p class="eyebrow">How we work</p><h2>Principles we hold ourselves to</h2></div></div>
+<section class="s alt"><div class="wrap"><div class="shead"><div><p class="eyebrow">How we work</p><h2>Principles we hold ourselves to</h2></div></div>
 <div class="grid g3">
 <div><h3>Sealed by registered professionals</h3><p class="muted">Engineering designs are sealed by COREN-registered engineers and architectural permit drawings by ARCON-registered architects. Nothing is issued for construction without it.</p></div>
-<div><h3>Prices that state their basis</h3><p class="muted">Every estimate shows its date, its accuracy and VAT separately. A firm price follows design and a bill of quantities.</p></div>
+<div><h3>No upfront payments</h3><p class="muted">{E(PROFILE["payments"])}</p></div>
 <div><h3>Safety stops work</h3><p class="muted">Anyone on our sites can stop an unsafe activity: unshored trenches, failing props, unprotected work at height or live electrics.</p></div>
 <div><h3>Clients' money is protected</h3><p class="muted">For diaspora clients, funds sit in escrow with First Trustees and are released only against evidence.</p></div>
 <div><h3>Related parties disclosed</h3><p class="muted">Where a group company (plant, materials) supplies your project, we tell you and compare at least one independent quote.</p></div>
-<div><h3>Your information stays private</h3><p class="muted">We collect only what we need, follow the Nigeria Data Protection Act 2023, and never publish diaspora or secure-space clients.</p></div>
+<div><h3>Confidential by default</h3><p class="muted">Every brief is under NDA. We follow the Nigeria Data Protection Act 2023 and never publish diaspora or secure-space clients.</p></div>
 </div></div></section>
-<section class="s alt"><div class="wrap"><div class="shead"><div><p class="eyebrow">Group companies</p><h2>Plant, materials and price data from the same founder</h2><p class="lede">Used on Artizanni projects only on arm's-length terms, with an independent comparison quote.</p></div></div>
+<section class="s"><div class="wrap"><div class="shead"><div><p class="eyebrow">Group companies</p><h2>Plant, materials and price data from the same founder</h2><p class="lede">Used on Artizanni projects only on arm's-length terms, with an independent comparison quote.</p></div></div>
 <div class="grid g3">{"".join(f'<a class="svc" href="{u}" rel="noopener"><h3>{E(n)}</h3><p>{E(d)}</p><span class="more">{E(u.split("//")[1].strip("/"))} {ARW}</span></a>' for n, u, d in GROUP)}</div></div></section>
 {cta(R)}'''
-    ld = [crumbs_ld(trail), {"@type": "AboutPage", "url": BASE + path, "about": {"@id": ORG_ID}}]
-    page(path, "About", "Artizanni Business Services Limited (RC 1065469), an Abuja design-build and engineering firm founded in 2012 and led by Engr. Akolade Maruf Ibrahim, COREN R29685.", body, active=path, ld=ld, prio="0.8")
+    ld = [crumbs_ld(trail), {"@type": "AboutPage", "url": BASE + path, "about": {"@id": ORG_ID}},
+          {"@type": "DigitalDocument", "name": "Artizanni Corporate Profile 2026", "encodingFormat": "application/pdf", "url": BASE + "downloads/Artizanni-Corporate-Profile-2026.pdf", "author": {"@id": ORG_ID}}]
+    page(path, "About", "Artizanni Business Services Limited (RC 1065469), an Abuja design-build and engineering firm founded in 2012 and led by Engr. Akolade Maruf Ibrahim, COREN R29685. Mission, people, plant and compliance.", body, active=path, ld=ld, prio="0.8")
 
 # ================================================================== START (wizard)
 def build_start():

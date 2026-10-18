@@ -3,7 +3,8 @@
   "sector": "drainage",
   "caption": "Reclamation platform and access embankment advancing across low-lying wetland, Lagos",
   "w": 1600,
-  "h": 1200
+  "h": 1200,
+  "plate": 415
  },
  "reclaim-aerial-2": {
   "sector": "drainage",
@@ -13,9 +14,10 @@
  },
  "reclaim-dawn": {
   "sector": "drainage",
-  "caption": "Sand-filled formation to the reclaimed corridor at first light",
+  "caption": "Filling and formation of the access embankment",
   "w": 1188,
-  "h": 1600
+  "h": 1600,
+  "plate": 427
  },
  "reclaim-fill": {
   "sector": "drainage",
@@ -31,51 +33,59 @@
  },
  "reclaim-stockpile": {
   "sector": "drainage",
-  "caption": "Sand stockpiles and discharge point on the reclaimed area",
+  "caption": "Sand filling to the reclaimed platform",
   "w": 1268,
-  "h": 1600
+  "h": 1600,
+  "plate": 431
  },
  "gabion-wall": {
   "sector": "drainage",
-  "caption": "Gabion wall with geotextile backing to the channel bank",
+  "caption": "Completed gabion wall protecting the frontage",
   "w": 607,
-  "h": 1080
+  "h": 1080,
+  "plate": 434
  },
  "gabion-lining": {
-  "sector": "drainage",
-  "caption": "Geotextile and rock lining laid along the channel",
+  "sector": "water",
+  "caption": "Geotextile and rock lining to a diversion channel",
   "w": 963,
-  "h": 1280
+  "h": 1280,
+  "plate": 417
  },
  "gabion-excavator": {
   "sector": "drainage",
-  "caption": "Excavator placing rock to the gabion revetment",
+  "caption": "Gabion revetment to the channel bank",
   "w": 607,
-  "h": 1080
+  "h": 1080,
+  "plate": 433
  },
  "channel-lined": {
   "sector": "drainage",
-  "caption": "Lined channel and access corridor during construction",
+  "caption": "Completed concrete-lined channel",
   "w": 1268,
-  "h": 1600
+  "h": 1600,
+  "plate": 423
  },
  "channel-plant": {
   "sector": "drainage",
-  "caption": "Long-reach plant working the channel through a built-up area",
+  "caption": "Long-reach excavator working the channel",
   "w": 1268,
-  "h": 1600
+  "h": 1600,
+  "plate": 424
  },
  "channel-gabion": {
   "sector": "drainage",
-  "caption": "Gabion revetment running the length of the channel",
+  "caption": "Stone pitching to the channel batter",
   "w": 1176,
-  "h": 1600
+  "h": 1600,
+  "plate": 425
  },
  "channel-road": {
-  "sector": "roads",
-  "caption": "Roller and loader forming the corridor beside the new channel",
+  "sector": "drainage",
+  "caption": "Compaction of the reclaimed platform",
   "w": 1539,
-  "h": 1600
+  "h": 1600,
+  "plate": 418
  },
  "corridor-roller": {
   "sector": "roads",
@@ -96,46 +106,52 @@
   "h": 1600
  },
  "plant-lowbed": {
-  "sector": "plant",
+  "sector": "roads",
   "caption": "Paver delivered to site on a low-bed trailer",
   "w": 606,
   "h": 1080
  },
  "cofferdam": {
   "sector": "water",
-  "caption": "Cofferdam of geomembrane and rock armour in a live watercourse",
+  "caption": "Temporary crossing viewed from the upstream bank",
   "w": 960,
-  "h": 1280
+  "h": 1280,
+  "plate": 13
  },
  "cofferdam-2": {
   "sector": "water",
-  "caption": "Cofferdam alignment against the barrage structure",
+  "caption": "Geomembrane and graded rock armour to the working platform",
   "w": 960,
-  "h": 1280
+  "h": 1280,
+  "plate": 12
  },
  "cofferdam-armour": {
   "sector": "water",
-  "caption": "Bagged fill and rock armour forming the cofferdam face",
+  "caption": "Rock-armoured causeway advancing across the channel",
   "w": 960,
-  "h": 1280
+  "h": 1280,
+  "plate": 11
  },
  "causeway": {
   "sector": "water",
   "caption": "Temporary causeway across the channel, viewed from the structure",
   "w": 750,
-  "h": 1000
+  "h": 1000,
+  "plate": 14
  },
  "reservoir": {
   "sector": "water",
-  "caption": "Impounded reservoir upstream of a dam structure",
+  "caption": "Impounded reservoir upstream of the structure",
   "w": 1200,
-  "h": 1600
+  "h": 1600,
+  "plate": 3
  },
  "dewater-apron": {
   "sector": "water",
   "caption": "Dewatered apron with starter bars set for new concrete",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 6
  },
  "dewater-pump": {
   "sector": "water",
@@ -165,7 +181,8 @@
   "sector": "power",
   "caption": "Deck formwork with an HV transmission tower beyond",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 7
  },
  "stone-rebar": {
   "sector": "water",
@@ -175,33 +192,38 @@
  },
  "duplex-1": {
   "sector": "residential",
-  "caption": "Detached duplex with stone-coated roof during external finishing",
+  "caption": "Twin units under a completed roof",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 324
  },
  "duplex-2": {
   "sector": "residential",
-  "caption": "Entrance bay and sweeping stair under construction",
+  "caption": "Sweeping entrance stair under construction",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 353
  },
  "duplex-3": {
   "sector": "residential",
   "caption": "Arched openings and moulded entrance bay before render",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 359
  },
  "duplex-4": {
   "sector": "residential",
-  "caption": "Duplex at roof completion with scaffold retained",
+  "caption": "Superstructure complete, finishes commencing",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 358
  },
  "duplex-5": {
   "sector": "residential",
   "caption": "Classical duplex frontage during finishing",
   "w": 810,
-  "h": 1080
+  "h": 1080,
+  "plate": 376
  },
  "duplex-6": {
   "sector": "residential",
@@ -211,39 +233,45 @@
  },
  "brick-clad": {
   "sector": "residential",
-  "caption": "Facing brick plinth and arched windows on completion",
+  "caption": "Facing brick detail to a service elevation",
   "w": 810,
-  "h": 1080
+  "h": 1080,
+  "plate": 337
  },
  "unit-3": {
   "sector": "residential",
-  "caption": "Three-storey block with scaffold to the fa\u00e7ade",
+  "caption": "Rendered elevation with scaffold retained",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 354
  },
  "roof-tile": {
   "sector": "interiors",
   "caption": "Stone-coated roof sheet: profile detail",
   "w": 1080,
-  "h": 607
+  "h": 607,
+  "plate": 339
  },
  "slab-1": {
   "sector": "structures",
-  "caption": "Suspended slab reinforcement ready for inspection",
+  "caption": "Sunken structure with formwork retained",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 378
  },
  "slab-2": {
   "sector": "structures",
-  "caption": "Two-way reinforcement across the deck",
+  "caption": "Reinforcement to the suspended floor",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 380
  },
  "slab-3": {
   "sector": "structures",
-  "caption": "Deck reinforcement over a long-span frame",
+  "caption": "Slab reinforcement ready for inspection",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 395
  },
  "stair-1": {
   "sector": "structures",
@@ -253,9 +281,10 @@
  },
  "stair-2": {
   "sector": "structures",
-  "caption": "Reinforcement to a cast stair flight",
+  "caption": "Rib-and-block floor system under construction",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 379
  },
  "frame-1": {
   "sector": "structures",
@@ -265,9 +294,10 @@
  },
  "frame-2": {
   "sector": "structures",
-  "caption": "Columns and blockwork rising across the plot",
+  "caption": "Long-span frame under construction",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 331
  },
  "frame-3": {
   "sector": "structures",
@@ -277,21 +307,24 @@
  },
  "frame-4": {
   "sector": "structures",
-  "caption": "Column cages and blockwork at first floor",
+  "caption": "Column cages with blockwork infill",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 373
  },
  "slab-edge": {
   "sector": "structures",
-  "caption": "Slab and stair reinforcement at the deck edge",
+  "caption": "Beam and slab reinforcement detail",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 399
  },
  "retail-1": {
   "sector": "commercial",
-  "caption": "Fa\u00e7ade cladding and signage installation from scaffold",
+  "caption": "Cladding and signage installation",
   "w": 540,
-  "h": 960
+  "h": 960,
+  "plate": 383
  },
  "retail-2": {
   "sector": "commercial",
@@ -300,111 +333,1241 @@
   "h": 960
  },
  "retail-3": {
-  "sector": "commercial",
-  "caption": "Paved access along the completed frontage",
+  "sector": "roads",
+  "caption": "Completed access road and drainage line",
   "w": 540,
-  "h": 960
+  "h": 960,
+  "plate": 413
  },
  "retail-4": {
-  "sector": "commercial",
-  "caption": "Completed ancillary units and covered walkway",
+  "sector": "interiors",
+  "caption": "External finishes and paving to the entrance",
   "w": 960,
-  "h": 540
+  "h": 540,
+  "plate": 414
  },
  "coldroom-1": {
   "sector": "industrial",
   "caption": "Insulated panel cold room, freestanding installation",
   "w": 768,
-  "h": 1024
+  "h": 1024,
+  "plate": 343
  },
  "coldroom-2": {
   "sector": "industrial",
-  "caption": "Cold room shell under a steel roof",
+  "caption": "Cold room shell under assembly",
   "w": 1024,
-  "h": 630
+  "h": 630,
+  "plate": 344
  },
  "coldroom-3": {
   "sector": "industrial",
-  "caption": "Lit chilled store interior on completion",
+  "caption": "Chilled store interior on completion",
   "w": 540,
-  "h": 960
+  "h": 960,
+  "plate": 345
  },
  "panel-1": {
   "sector": "industrial",
-  "caption": "Panel-clad process building with loading doors",
+  "caption": "Panel-clad process building",
   "w": 960,
-  "h": 540
+  "h": 540,
+  "plate": 350
  },
  "panel-2": {
   "sector": "industrial",
-  "caption": "Loading canopies to the process hall",
+  "caption": "Loading bays and canopies to the process hall",
   "w": 960,
-  "h": 540
+  "h": 540,
+  "plate": 351
  },
  "yard-1": {
   "sector": "industrial",
   "caption": "Covered storage bay under a long-span canopy",
   "w": 1040,
-  "h": 780
+  "h": 780,
+  "plate": 402
  },
  "yard-2": {
   "sector": "industrial",
   "caption": "Logistics yard and hardstanding",
   "w": 1040,
-  "h": 780
+  "h": 780,
+  "plate": 403
  },
  "int-1": {
   "sector": "interiors",
-  "caption": "Polished floor and feature colour wall on completion",
+  "caption": "Reception lobby with feature colour wall",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 386
  },
  "int-2": {
   "sector": "interiors",
-  "caption": "Production area with stainless equipment and colour-blocked walls",
+  "caption": "Retail interior, ceiling and lighting complete",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 387
  },
  "int-3": {
   "sector": "interiors",
   "caption": "Colour blocking to the sales floor",
   "w": 1080,
-  "h": 810
+  "h": 810,
+  "plate": 388
  },
  "int-4": {
   "sector": "interiors",
   "caption": "Shelving system being installed",
   "w": 810,
-  "h": 1080
+  "h": 1080,
+  "plate": 390
  },
  "int-5": {
   "sector": "interiors",
-  "caption": "Sales floor with gondola units positioned",
+  "caption": "Sales floor with fixtures positioned",
   "w": 810,
-  "h": 1080
+  "h": 1080,
+  "plate": 392
  },
  "int-6": {
   "sector": "interiors",
-  "caption": "Granite worktop and tiled base",
+  "caption": "Granite counter and splashback",
   "w": 810,
-  "h": 1080
+  "h": 1080,
+  "plate": 393
  },
  "int-7": {
   "sector": "interiors",
-  "caption": "Polished stone counter installation",
+  "caption": "Polished worktop installation",
   "w": 810,
-  "h": 1080
+  "h": 1080,
+  "plate": 394
  },
  "site-1": {
-  "sector": "design",
+  "sector": "consultancy",
   "caption": "Setting out and excavation to foundation lines",
   "w": 1080,
   "h": 810
  },
  "site-2": {
-  "sector": "design",
-  "caption": "Site survey on an undeveloped plot",
+  "sector": "consultancy",
+  "caption": "Site appraisal ahead of design",
   "w": 1040,
-  "h": 780
+  "h": 780,
+  "plate": 401
+ },
+ "p429": {
+  "sector": "drainage",
+  "caption": "Aggregate stockpiles at the working front",
+  "plate": 429,
+  "w": 924,
+  "h": 1316
+ },
+ "p16": {
+  "sector": "structures",
+  "caption": "Envelope and scaffold to the rendered elevation",
+  "plate": 16,
+  "w": 1092,
+  "h": 812
+ },
+ "p19": {
+  "sector": "commercial",
+  "caption": "Multi-storey commercial building, envelope complete",
+  "plate": 19,
+  "w": 1092,
+  "h": 812
+ },
+ "p29": {
+  "sector": "consultancy",
+  "caption": "Setting out and excavation to foundation lines",
+  "plate": 29,
+  "w": 812,
+  "h": 1092
+ },
+ "p32": {
+  "sector": "structures",
+  "caption": "Steel element set against the block structure",
+  "plate": 32,
+  "w": 812,
+  "h": 1092
+ },
+ "p36": {
+  "sector": "commercial",
+  "caption": "Service elevation and delivery apron",
+  "plate": 36,
+  "w": 560,
+  "h": 980
+ },
+ "p37": {
+  "sector": "commercial",
+  "caption": "Glazed stair tower to the upper trading floor",
+  "plate": 37,
+  "w": 560,
+  "h": 980
+ },
+ "p40": {
+  "sector": "commercial",
+  "caption": "Long-span canopy over the loading area",
+  "plate": 40,
+  "w": 980,
+  "h": 560
+ },
+ "p41": {
+  "sector": "commercial",
+  "caption": "Rear elevation with condenser bank",
+  "plate": 41,
+  "w": 980,
+  "h": 560
+ },
+ "p42": {
+  "sector": "commercial",
+  "caption": "Completed retail plaza \u2014 principal elevation",
+  "plate": 42,
+  "w": 980,
+  "h": 560
+ },
+ "p43": {
+  "sector": "commercial",
+  "caption": "Frontage and forecourt on completion",
+  "plate": 43,
+  "w": 980,
+  "h": 560
+ },
+ "p44": {
+  "sector": "commercial",
+  "caption": "Corner treatment: rendered fins and signage bands",
+  "plate": 44,
+  "w": 812,
+  "h": 1092
+ },
+ "p45": {
+  "sector": "commercial",
+  "caption": "Completed retail plaza, lit at night",
+  "plate": 45,
+  "w": 728,
+  "h": 756
+ },
+ "p52": {
+  "sector": "structures",
+  "caption": "Frame and roof structure over the working floor",
+  "plate": 52,
+  "w": 1092,
+  "h": 812
+ },
+ "p55": {
+  "sector": "structures",
+  "caption": "Multi-storey commercial frame with scaffold to the fa\u00e7ade",
+  "plate": 55,
+  "w": 1092,
+  "h": 812
+ },
+ "p58": {
+  "sector": "structures",
+  "caption": "Scaffolded elevation during blockwork",
+  "plate": 58,
+  "w": 1092,
+  "h": 812
+ },
+ "p61": {
+  "sector": "structures",
+  "caption": "Ground floor slab and internal frame",
+  "plate": 61,
+  "w": 1092,
+  "h": 812
+ },
+ "p64": {
+  "sector": "structures",
+  "caption": "Column formwork and props across the ground floor",
+  "plate": 64,
+  "w": 980,
+  "h": 560
+ },
+ "p65": {
+  "sector": "structures",
+  "caption": "Stair core rising through the frame",
+  "plate": 65,
+  "w": 812,
+  "h": 1092
+ },
+ "p66": {
+  "sector": "structures",
+  "caption": "Cantilevered stair flight in reinforced concrete",
+  "plate": 66,
+  "w": 812,
+  "h": 1092
+ },
+ "p68": {
+  "sector": "structures",
+  "caption": "Stair and landing structure",
+  "plate": 68,
+  "w": 1092,
+  "h": 812
+ },
+ "p71": {
+  "sector": "industrial",
+  "caption": "Steel roof over a covered structure",
+  "plate": 71,
+  "w": 1092,
+  "h": 812
+ },
+ "p76": {
+  "sector": "structures",
+  "caption": "Cast stair with balustrade fixings set",
+  "plate": 76,
+  "w": 560,
+  "h": 980
+ },
+ "p77": {
+  "sector": "structures",
+  "caption": "Precast tread assembly to the main stair",
+  "plate": 77,
+  "w": 812,
+  "h": 1092
+ },
+ "p79": {
+  "sector": "structures",
+  "caption": "Steel roof over the reinforced concrete frame",
+  "plate": 79,
+  "w": 980,
+  "h": 560
+ },
+ "p80": {
+  "sector": "structures",
+  "caption": "Column formwork ready for pour",
+  "plate": 80,
+  "w": 980,
+  "h": 560
+ },
+ "p82": {
+  "sector": "structures",
+  "caption": "Completed shell prior to finishing",
+  "plate": 82,
+  "w": 560,
+  "h": 980
+ },
+ "p84": {
+  "sector": "structures",
+  "caption": "Column shutters set out on the podium",
+  "plate": 84,
+  "w": 980,
+  "h": 560
+ },
+ "p85": {
+  "sector": "structures",
+  "caption": "Frame taking shape across the plot",
+  "plate": 85,
+  "w": 980,
+  "h": 560
+ },
+ "p90": {
+  "sector": "structures",
+  "caption": "Frame interior with props still loaded",
+  "plate": 90,
+  "w": 1092,
+  "h": 812
+ },
+ "p91": {
+  "sector": "structures",
+  "caption": "External stair and frame during construction",
+  "plate": 91,
+  "w": 980,
+  "h": 560
+ },
+ "p93": {
+  "sector": "structures",
+  "caption": "Formwork and access to the upper deck",
+  "plate": 93,
+  "w": 980,
+  "h": 560
+ },
+ "p97": {
+  "sector": "structures",
+  "caption": "Fixing reinforcement to the suspended slab",
+  "plate": 97,
+  "w": 980,
+  "h": 560
+ },
+ "p100": {
+  "sector": "power",
+  "caption": "Blinding and formwork to a linear equipment foundation",
+  "plate": 100,
+  "w": 560,
+  "h": 980
+ },
+ "p104": {
+  "sector": "structures",
+  "caption": "Slab pour complete; curing under way",
+  "plate": 104,
+  "w": 980,
+  "h": 560
+ },
+ "p111": {
+  "sector": "structures",
+  "caption": "Reinforcement mat to a raft foundation",
+  "plate": 111,
+  "w": 980,
+  "h": 560
+ },
+ "p112": {
+  "sector": "power",
+  "caption": "Reinforced concrete columns rising above the platform",
+  "plate": 112,
+  "w": 980,
+  "h": 560
+ },
+ "p113": {
+  "sector": "power",
+  "caption": "Reinforced concrete cable trench",
+  "plate": 113,
+  "w": 560,
+  "h": 980
+ },
+ "p119": {
+  "sector": "structures",
+  "caption": "Column cages and starter bars from the base",
+  "plate": 119,
+  "w": 980,
+  "h": 560
+ },
+ "p123": {
+  "sector": "structures",
+  "caption": "Blockwork infill between structural columns",
+  "plate": 123,
+  "w": 980,
+  "h": 560
+ },
+ "p124": {
+  "sector": "structures",
+  "caption": "Formwork frame to the first-floor deck",
+  "plate": 124,
+  "w": 980,
+  "h": 560
+ },
+ "p125": {
+  "sector": "structures",
+  "caption": "Slab reinforcement over the ground floor",
+  "plate": 125,
+  "w": 980,
+  "h": 560
+ },
+ "p126": {
+  "sector": "industrial",
+  "caption": "Roof frame set out over the ground slab",
+  "plate": 126,
+  "w": 980,
+  "h": 560
+ },
+ "p135": {
+  "sector": "structures",
+  "caption": "Two-way reinforcement to the suspended slab",
+  "plate": 135,
+  "w": 980,
+  "h": 560
+ },
+ "p136": {
+  "sector": "structures",
+  "caption": "Arched openings formed within the frame",
+  "plate": 136,
+  "w": 980,
+  "h": 560
+ },
+ "p142": {
+  "sector": "structures",
+  "caption": "Three-storey frame with blockwork envelope",
+  "plate": 142,
+  "w": 812,
+  "h": 1092
+ },
+ "p143": {
+  "sector": "industrial",
+  "caption": "Steel roof trusses over blockwork walls",
+  "plate": 143,
+  "w": 1092,
+  "h": 812
+ },
+ "p146": {
+  "sector": "structures",
+  "caption": "Roof steelwork over the completed frame",
+  "plate": 146,
+  "w": 980,
+  "h": 560
+ },
+ "p149": {
+  "sector": "structures",
+  "caption": "Two structures under simultaneous construction",
+  "plate": 149,
+  "w": 1092,
+  "h": 812
+ },
+ "p153": {
+  "sector": "structures",
+  "caption": "Full-height scaffold to the flank wall",
+  "plate": 153,
+  "w": 812,
+  "h": 1092
+ },
+ "p154": {
+  "sector": "interiors",
+  "caption": "Materials staged for the fitout",
+  "plate": 154,
+  "w": 1092,
+  "h": 812
+ },
+ "p156": {
+  "sector": "structures",
+  "caption": "Elevation glazed and ready for render",
+  "plate": 156,
+  "w": 1092,
+  "h": 812
+ },
+ "p159": {
+  "sector": "interiors",
+  "caption": "Plastered room ready for finishes",
+  "plate": 159,
+  "w": 1092,
+  "h": 812
+ },
+ "p165": {
+  "sector": "interiors",
+  "caption": "Partition framing set out",
+  "plate": 165,
+  "w": 1092,
+  "h": 812
+ },
+ "p170": {
+  "sector": "interiors",
+  "caption": "Painted and glazed room on completion",
+  "plate": 170,
+  "w": 1092,
+  "h": 812
+ },
+ "p172": {
+  "sector": "interiors",
+  "caption": "Window openings and internal render complete",
+  "plate": 172,
+  "w": 1092,
+  "h": 812
+ },
+ "p174": {
+  "sector": "roads",
+  "caption": "Formation and sub-base to the estate road",
+  "plate": 174,
+  "w": 784,
+  "h": 1064
+ },
+ "p175": {
+  "sector": "roads",
+  "caption": "Stone base laid to the carriageway",
+  "plate": 175,
+  "w": 784,
+  "h": 1064
+ },
+ "p176": {
+  "sector": "roads",
+  "caption": "Estate road base course under construction",
+  "plate": 176,
+  "w": 784,
+  "h": 1064
+ },
+ "p177": {
+  "sector": "roads",
+  "caption": "Kerbing and edge restraint under construction",
+  "plate": 177,
+  "w": 980,
+  "h": 560
+ },
+ "p180": {
+  "sector": "roads",
+  "caption": "Completed base course through the settlement",
+  "plate": 180,
+  "w": 1064,
+  "h": 784
+ },
+ "p187": {
+  "sector": "power",
+  "caption": "Bulk excavation for equipment foundations",
+  "plate": 187,
+  "w": 812,
+  "h": 1092
+ },
+ "p191": {
+  "sector": "power",
+  "caption": "Pipe crossing set into the excavation",
+  "plate": 191,
+  "w": 812,
+  "h": 1092
+ },
+ "p192": {
+  "sector": "power",
+  "caption": "Perimeter wall to the site boundary",
+  "plate": 192,
+  "w": 1092,
+  "h": 812
+ },
+ "p193": {
+  "sector": "power",
+  "caption": "Boundary construction alongside existing property",
+  "plate": 193,
+  "w": 1092,
+  "h": 812
+ },
+ "p195": {
+  "sector": "drainage",
+  "caption": "Concrete-lined drain to an urban carriageway",
+  "plate": 195,
+  "w": 812,
+  "h": 1092
+ },
+ "p196": {
+  "sector": "drainage",
+  "caption": "Drainage channel through a built-up corridor",
+  "plate": 196,
+  "w": 812,
+  "h": 1092
+ },
+ "p198": {
+  "sector": "power",
+  "caption": "Ducted service crossing beneath the access road",
+  "plate": 198,
+  "w": 812,
+  "h": 1092
+ },
+ "p206": {
+  "sector": "interiors",
+  "caption": "Bakery production area fitted out and in operation",
+  "plate": 206,
+  "w": 1064,
+  "h": 784
+ },
+ "p207": {
+  "sector": "interiors",
+  "caption": "Rotary rack oven installed and commissioned",
+  "plate": 207,
+  "w": 784,
+  "h": 1064
+ },
+ "p208": {
+  "sector": "interiors",
+  "caption": "Production and service counter in operation",
+  "plate": 208,
+  "w": 1064,
+  "h": 784
+ },
+ "p209": {
+  "sector": "interiors",
+  "caption": "Preparation area with stainless equipment",
+  "plate": 209,
+  "w": 1064,
+  "h": 784
+ },
+ "p211": {
+  "sector": "residential",
+  "caption": "Completed terrace of semi-detached units",
+  "plate": 211,
+  "w": 1092,
+  "h": 812
+ },
+ "p212": {
+  "sector": "residential",
+  "caption": "Estate road and landscaping nearing completion",
+  "plate": 212,
+  "w": 1092,
+  "h": 812
+ },
+ "p214": {
+  "sector": "residential",
+  "caption": "Boundary wall and driveway to the units",
+  "plate": 214,
+  "w": 1092,
+  "h": 812
+ },
+ "p215": {
+  "sector": "residential",
+  "caption": "Entrance portico and arched stair light",
+  "plate": 215,
+  "w": 1092,
+  "h": 812
+ },
+ "p216": {
+  "sector": "residential",
+  "caption": "Paired units from the approach road",
+  "plate": 216,
+  "w": 1092,
+  "h": 812
+ },
+ "p217": {
+  "sector": "residential",
+  "caption": "Hoist tower in place during external finishing",
+  "plate": 217,
+  "w": 1092,
+  "h": 812
+ },
+ "p218": {
+  "sector": "residential",
+  "caption": "Rendered and painted elevations on completion",
+  "plate": 218,
+  "w": 1092,
+  "h": 812
+ },
+ "p219": {
+  "sector": "residential",
+  "caption": "Gable elevation with external works underway",
+  "plate": 219,
+  "w": 1092,
+  "h": 812
+ },
+ "p220": {
+  "sector": "residential",
+  "caption": "Completed duplex with paved forecourt and landscaping",
+  "plate": 220,
+  "w": 1092,
+  "h": 812
+ },
+ "p221": {
+  "sector": "water",
+  "caption": "Rock protection to an outfall culvert",
+  "plate": 221,
+  "w": 812,
+  "h": 1092
+ },
+ "p222": {
+  "sector": "water",
+  "caption": "Stone pitching at the headwall",
+  "plate": 222,
+  "w": 812,
+  "h": 1092
+ },
+ "p235": {
+  "sector": "roads",
+  "caption": "Vibrating roller compacting the formation",
+  "plate": 235,
+  "w": 812,
+  "h": 1092
+ },
+ "p236": {
+  "sector": "commercial",
+  "caption": "Shopfront: glazing, shutter and colour banding",
+  "plate": 236,
+  "w": 812,
+  "h": 1092
+ },
+ "p238": {
+  "sector": "commercial",
+  "caption": "Completed unit ready for handover",
+  "plate": 238,
+  "w": 812,
+  "h": 1092
+ },
+ "p239": {
+  "sector": "commercial",
+  "caption": "Steel roof structure to the trading hall",
+  "plate": 239,
+  "w": 1092,
+  "h": 812
+ },
+ "p241": {
+  "sector": "residential",
+  "caption": "Site setting and access road",
+  "plate": 241,
+  "w": 1092,
+  "h": 812
+ },
+ "p242": {
+  "sector": "residential",
+  "caption": "Entrance bay: mouldings, arch and cornice",
+  "plate": 242,
+  "w": 1092,
+  "h": 812
+ },
+ "p243": {
+  "sector": "residential",
+  "caption": "Roof tiling and scaffold to the second unit",
+  "plate": 243,
+  "w": 1092,
+  "h": 812
+ },
+ "p244": {
+  "sector": "residential",
+  "caption": "Completed units, principal frontage",
+  "plate": 244,
+  "w": 1092,
+  "h": 812
+ },
+ "p245": {
+  "sector": "residential",
+  "caption": "Perimeter and units from the rear approach",
+  "plate": 245,
+  "w": 1092,
+  "h": 812
+ },
+ "p246": {
+  "sector": "interiors",
+  "caption": "Sanitary fitout: tiling and partition complete",
+  "plate": 246,
+  "w": 504,
+  "h": 1008
+ },
+ "p247": {
+  "sector": "interiors",
+  "caption": "Wall tiling in progress",
+  "plate": 247,
+  "w": 980,
+  "h": 980
+ },
+ "p248": {
+  "sector": "interiors",
+  "caption": "Tile banding detail to the wet area",
+  "plate": 248,
+  "w": 672,
+  "h": 1092
+ },
+ "p250": {
+  "sector": "consultancy",
+  "caption": "Setting out on site with the works team",
+  "plate": 250,
+  "w": 560,
+  "h": 980
+ },
+ "p251": {
+  "sector": "industrial",
+  "caption": "Trussed roof to the warehouse shell",
+  "plate": 251,
+  "w": 1092,
+  "h": 812
+ },
+ "p252": {
+  "sector": "commercial",
+  "caption": "Forecourt and parking apron in use",
+  "plate": 252,
+  "w": 1092,
+  "h": 812
+ },
+ "p253": {
+  "sector": "industrial",
+  "caption": "Blockwork walls and steel roof to the store",
+  "plate": 253,
+  "w": 1092,
+  "h": 812
+ },
+ "p254": {
+  "sector": "industrial",
+  "caption": "Clear-span interior before flooring",
+  "plate": 254,
+  "w": 1092,
+  "h": 812
+ },
+ "p257": {
+  "sector": "residential",
+  "caption": "Blockwork and scaffold at first-floor level",
+  "plate": 257,
+  "w": 812,
+  "h": 1092
+ },
+ "p258": {
+  "sector": "residential",
+  "caption": "Setting out the forecourt slab",
+  "plate": 258,
+  "w": 1092,
+  "h": 812
+ },
+ "p262": {
+  "sector": "residential",
+  "caption": "External render in progress",
+  "plate": 262,
+  "w": 1092,
+  "h": 812
+ },
+ "p263": {
+  "sector": "residential",
+  "caption": "Painting and finishing to the front elevation",
+  "plate": 263,
+  "w": 812,
+  "h": 1092
+ },
+ "p264": {
+  "sector": "residential",
+  "caption": "Window installation to the upper floor",
+  "plate": 264,
+  "w": 812,
+  "h": 1092
+ },
+ "p265": {
+  "sector": "residential",
+  "caption": "Scaffolded elevation during finishing",
+  "plate": 265,
+  "w": 1092,
+  "h": 812
+ },
+ "p276": {
+  "sector": "industrial",
+  "caption": "Steel roof trusses during erection",
+  "plate": 276,
+  "w": 1092,
+  "h": 812
+ },
+ "p277": {
+  "sector": "industrial",
+  "caption": "Portal frame erection over the yard",
+  "plate": 277,
+  "w": 1092,
+  "h": 812
+ },
+ "p279": {
+  "sector": "industrial",
+  "caption": "Rafter and column connection during erection",
+  "plate": 279,
+  "w": 812,
+  "h": 1092
+ },
+ "p281": {
+  "sector": "industrial",
+  "caption": "Roof bracing and purlin runs",
+  "plate": 281,
+  "w": 1092,
+  "h": 812
+ },
+ "p282": {
+  "sector": "industrial",
+  "caption": "Completed frame awaiting sheeting",
+  "plate": 282,
+  "w": 1092,
+  "h": 812
+ },
+ "p283": {
+  "sector": "interiors",
+  "caption": "Patterned floor tiling to the circulation route",
+  "plate": 283,
+  "w": 560,
+  "h": 980
+ },
+ "p284": {
+  "sector": "interiors",
+  "caption": "Skirting and floor junction detail",
+  "plate": 284,
+  "w": 560,
+  "h": 980
+ },
+ "p292": {
+  "sector": "mep",
+  "caption": "Galvanised ductwork routed beneath the slab",
+  "plate": 292,
+  "w": 1092,
+  "h": 812
+ },
+ "p295": {
+  "sector": "mep",
+  "caption": "Plant and distribution ducting at first fix",
+  "plate": 295,
+  "w": 812,
+  "h": 1092
+ },
+ "p296": {
+  "sector": "mep",
+  "caption": "Galvanised ductwork staged beneath the slab",
+  "plate": 296,
+  "w": 1092,
+  "h": 812
+ },
+ "p297": {
+  "sector": "drainage",
+  "caption": "Gabion mattresses stockpiled for the revetment",
+  "plate": 297,
+  "w": 812,
+  "h": 1092
+ },
+ "p298": {
+  "sector": "drainage",
+  "caption": "Woven baskets awaiting assembly",
+  "plate": 298,
+  "w": 812,
+  "h": 1092
+ },
+ "p300": {
+  "sector": "drainage",
+  "caption": "Mattress units staged at the works compound",
+  "plate": 300,
+  "w": 812,
+  "h": 1092
+ },
+ "p302": {
+  "sector": "mep",
+  "caption": "Duct section being set to level",
+  "plate": 302,
+  "w": 784,
+  "h": 1064
+ },
+ "p303": {
+  "sector": "mep",
+  "caption": "Supply duct with take-off to the diffuser",
+  "plate": 303,
+  "w": 784,
+  "h": 1064
+ },
+ "p304": {
+  "sector": "mep",
+  "caption": "Fabricated duct sections staged for install",
+  "plate": 304,
+  "w": 784,
+  "h": 1064
+ },
+ "p305": {
+  "sector": "mep",
+  "caption": "Duct run through a structural opening",
+  "plate": 305,
+  "w": 784,
+  "h": 1064
+ },
+ "p306": {
+  "sector": "mep",
+  "caption": "Distribution ductwork above the trading floor",
+  "plate": 306,
+  "w": 784,
+  "h": 1064
+ },
+ "p307": {
+  "sector": "mep",
+  "caption": "Riser duct at the blockwork wall",
+  "plate": 307,
+  "w": 784,
+  "h": 1064
+ },
+ "p308": {
+  "sector": "mep",
+  "caption": "On-site duct fabrication",
+  "plate": 308,
+  "w": 784,
+  "h": 1064
+ },
+ "p309": {
+  "sector": "mep",
+  "caption": "Sheet metal work: forming and assembly",
+  "plate": 309,
+  "w": 784,
+  "h": 1064
+ },
+ "p312": {
+  "sector": "mep",
+  "caption": "Ceiling bulkhead formed around the ductwork",
+  "plate": 312,
+  "w": 1092,
+  "h": 812
+ },
+ "p313": {
+  "sector": "residential",
+  "caption": "Estate under construction, block by block",
+  "plate": 313,
+  "w": 1092,
+  "h": 812
+ },
+ "p314": {
+  "sector": "residential",
+  "caption": "Roof complete; render and joinery following",
+  "plate": 314,
+  "w": 1092,
+  "h": 812
+ },
+ "p315": {
+  "sector": "residential",
+  "caption": "Unit at practical completion of the envelope",
+  "plate": 315,
+  "w": 812,
+  "h": 1092
+ },
+ "p316": {
+  "sector": "mep",
+  "caption": "Ducting installed within the shell",
+  "plate": 316,
+  "w": 1036,
+  "h": 784
+ },
+ "p318": {
+  "sector": "mep",
+  "caption": "Conduit and fixings set into blockwork",
+  "plate": 318,
+  "w": 1092,
+  "h": 812
+ },
+ "p329": {
+  "sector": "structures",
+  "caption": "Deck reinforcement across the podium",
+  "plate": 329,
+  "w": 1092,
+  "h": 812
+ },
+ "p332": {
+  "sector": "consultancy",
+  "caption": "Long-span frame under construction",
+  "plate": 332,
+  "w": 1092,
+  "h": 812
+ },
+ "p333": {
+  "sector": "interiors",
+  "caption": "Decorative paving pattern",
+  "plate": 333,
+  "w": 616,
+  "h": 1092
+ },
+ "p335": {
+  "sector": "residential",
+  "caption": "Ancillary block and boundary works",
+  "plate": 335,
+  "w": 1092,
+  "h": 812
+ },
+ "p338": {
+  "sector": "residential",
+  "caption": "Site clearance and boundary wall construction",
+  "plate": 338,
+  "w": 1092,
+  "h": 812
+ },
+ "p340": {
+  "sector": "industrial",
+  "caption": "Containerised plant compound",
+  "plate": 340,
+  "w": 560,
+  "h": 980
+ },
+ "p346": {
+  "sector": "industrial",
+  "caption": "Lit cold store ready for commissioning",
+  "plate": 346,
+  "w": 560,
+  "h": 980
+ },
+ "p349": {
+  "sector": "mep",
+  "caption": "Conduit runs laid to the external route",
+  "plate": 349,
+  "w": 560,
+  "h": 980
+ },
+ "p356": {
+  "sector": "interiors",
+  "caption": "Cut stone slabs prepared for installation",
+  "plate": 356,
+  "w": 560,
+  "h": 980
+ },
+ "p357": {
+  "sector": "interiors",
+  "caption": "Slab cutting and finishing on site",
+  "plate": 357,
+  "w": 560,
+  "h": 980
+ },
+ "p360": {
+  "sector": "residential",
+  "caption": "Twin blocks under simultaneous construction",
+  "plate": 360,
+  "w": 1092,
+  "h": 812
+ },
+ "p362": {
+  "sector": "structures",
+  "caption": "Blockwork rising above the completed slab",
+  "plate": 362,
+  "w": 1092,
+  "h": 812
+ },
+ "p374": {
+  "sector": "structures",
+  "caption": "Column reinforcement at the perimeter",
+  "plate": 374,
+  "w": 1092,
+  "h": 812
+ },
+ "p382": {
+  "sector": "commercial",
+  "caption": "Scaffold to the fa\u00e7ade during finishing",
+  "plate": 382,
+  "w": 560,
+  "h": 980
+ },
+ "p385": {
+  "sector": "commercial",
+  "caption": "Full-height access scaffold to the entrance bay",
+  "plate": 385,
+  "w": 560,
+  "h": 980
+ },
+ "p389": {
+  "sector": "interiors",
+  "caption": "Shelving and gondola units unwrapped",
+  "plate": 389,
+  "w": 812,
+  "h": 1092
+ },
+ "p391": {
+  "sector": "interiors",
+  "caption": "Fitout of the ancillary rooms",
+  "plate": 391,
+  "w": 812,
+  "h": 1092
+ },
+ "p397": {
+  "sector": "structures",
+  "caption": "Deck reinforcement over the ground floor",
+  "plate": 397,
+  "w": 1092,
+  "h": 812
+ },
+ "p398": {
+  "sector": "structures",
+  "caption": "Stair opening formed in the deck",
+  "plate": 398,
+  "w": 812,
+  "h": 1092
+ },
+ "p404": {
+  "sector": "structures",
+  "caption": "Completed slab pour, ground floor",
+  "plate": 404,
+  "w": 1092,
+  "h": 812
+ },
+ "p405": {
+  "sector": "structures",
+  "caption": "Formed slab awaiting the next lift",
+  "plate": 405,
+  "w": 1092,
+  "h": 812
+ },
+ "p407": {
+  "sector": "consultancy",
+  "caption": "Site supervision during the works",
+  "plate": 407,
+  "w": 812,
+  "h": 1092
+ },
+ "p409": {
+  "sector": "interiors",
+  "caption": "Stainless display units delivered to site",
+  "plate": 409,
+  "w": 672,
+  "h": 1092
+ },
+ "p410": {
+  "sector": "commercial",
+  "caption": "External works and fa\u00e7ade finishing",
+  "plate": 410,
+  "w": 560,
+  "h": 980
+ },
+ "p411": {
+  "sector": "roads",
+  "caption": "Paved access and boundary treatment",
+  "plate": 411,
+  "w": 560,
+  "h": 980
+ },
+ "p412": {
+  "sector": "roads",
+  "caption": "Gated entrance and hardstanding",
+  "plate": 412,
+  "w": 560,
+  "h": 980
  }
 }

@@ -63,7 +63,8 @@ SERVICES = [
          "Rendered 3D models and walk-through animation",
          "Planning and development-permit drawing packs",
          "Construction drawings, schedules and specifications",
-         "Design for phased or incremental building"],
+         "Design for phased or incremental building",
+         "Value engineering during design, so the drawings match the budget"],
   notes=("Our recorded design work includes architectural plans, 3D models and animation for a 1,680-bed student "
          "village delivered on a PPP model, and architectural visualisation for a central mosque in Ikoyi, Lagos."),
   photos=["duplex-1", "duplex-5", "brick-clad", "site-2"]),
@@ -77,7 +78,8 @@ SERVICES = [
          "Roads, drainage, erosion control and site infrastructure",
          "Geotechnical / soil investigation coordination",
          "Mechanical, electrical and plumbing (MEP) design and coordination, including solar and back-up power",
-         "Structural integrity assessments of existing buildings"],
+         "Structural integrity assessments of existing buildings",
+         "Independent technical review of designs prepared by others"],
   notes=("Typical recorded work: an 80-tonne, 60MVA transformer plinth at a 132/33kV substation, substation control "
          "building structural design, and the full structural and civil design of a student village "
          "(buildings, roads and drainage networks)."),
@@ -94,7 +96,8 @@ SERVICES = [
          "Drainage, gabion revetment, erosion control and land reclamation",
          "Roads, hardstanding, kerbs and external works",
          "Specialist sub-contract work for main contractors"],
-  notes="Plant and materials are procured competitively. Where a group company supplies, we disclose it and compare at least one independent quote.",
+  notes=("We own and operate earthmoving and compaction plant, including an SDLG LG953N wheel loader acquired in 2021, and hire "
+         "specialist equipment where a scheme needs it. Where a group company supplies, we disclose it and compare at least one independent quote."),
   photos=["reclaim-aerial", "cofferdam", "channel-gabion", "frame-2"]),
 
  dict(slug="interiors", name="Artizanni Interiors", icon="int",
@@ -114,11 +117,13 @@ SERVICES = [
   short="Land sourcing, title verification, acquisition and development.",
   intro=("Most property losses in Nigeria start before anything is built: the wrong title, the wrong seller or "
          "the wrong plot. We help you find, verify and secure land or property, then develop it."),
-  items=["Land and property sourcing against your brief",
+  items=["Land and property sourcing against your brief, with comparable-price analysis and negotiation support",
          "Title due diligence with a lawyer and surveyor (C of O, Governor's consent, survey charting, excision)",
          "Acquisition, documentation and perfection of title",
          "Feasibility studies and development appraisals",
          "Estate planning, design and delivery",
+         "Technical due diligence before purchase: site, soil, drainage, access and structural condition",
+         "Sales advisory for owners disposing of property",
          "Customer due diligence (KYC/AML) as required for real-estate transactions"],
   notes=("We are SCUML-registered. Real-estate transactions require customer due diligence before any money changes hands."),
   photos=["site-2", "reclaim-aerial-2", "duplex-6", "yard-2"]),
@@ -131,7 +136,8 @@ SERVICES = [
          "Bills of quantities, cost plans and valuation checks",
          "Site supervision, quality inspections and progress reports with photos",
          "Contract administration, variations and payment certificates",
-         "Property and facility management, maintenance planning",
+         "Property and facility management: tenant sourcing and screening, lease administration, rent collection",
+         "Planned and reactive maintenance with documented work orders and service-charge reporting",
          "Long-term estate management strategy"],
   notes=("Recorded work includes a construction programme, a procurement plan and a ten-year inflation-tied facility "
          "and estate management strategy for a student hostel scheme."),
@@ -216,6 +222,15 @@ SECTORS = [
         "multi-storey framed buildings as a specialist sub-contractor."],
   facts=[("Substructure", "Raft · pad · strip foundations"), ("Superstructure", "RC frames and suspended slabs"),
          ("Quality gate", "Inspection before each pour")]),
+ dict(slug="mep", name="Mechanical & Electrical", hero="p296",
+  standfirst="Ductwork fabricated on site, services routed before ceilings close, conduit set into the structure as it rises.",
+  body=["We fabricate and install galvanised sheet-metal ductwork on our own projects, forming sections on site so that runs follow "
+        "the structure as built rather than as drawn. On retail and industrial work this removes a common cause of delay: the clash "
+        "found after the ceiling grid is up.",
+        "Electrical containment follows the same principle. Conduit and back boxes are set into blockwork during construction, and "
+        "external routes are laid and protected before hard landscaping closes over them."],
+  facts=[("Ductwork", "On-site fabrication, galvanised sheet"), ("Coordination", "Routed against as-built structure"),
+         ("Containment", "Conduit cast and chased in during build")]),
  dict(slug="commercial", name="Commercial & Retail", hero="retail-1",
   standfirst="Trading buildings that must open on the date advertised.",
   body=["In retail the client's return starts the day the doors open, so the fit-out programme, not the frame, is the "
@@ -308,6 +323,9 @@ MILESTONES = [
 ]
 
 DIASPORA_FAQ = [
+ ("Do I pay anything up front?",
+  "No. There are no upfront payments. Once scope and price are agreed, construction funds go into escrow with First Trustees, and every "
+  "payment after that is pro rata against certified progress."),
  ("Who holds my money?",
   "Your construction funds are paid into an escrow arrangement with First Trustees, an independent trustee company, not into Artizanni's account. "
   "Funds are released to us in stages, only when the milestone agreed in your contract has been completed and evidenced."),
@@ -352,3 +370,63 @@ GROUP = [
  ("Buildocrat", "https://buildocrat.store/", "Building materials and Price Lock"),
  ("Nigeria Construction Rate Book", "https://rates.buildocrat.store/", "Weekly construction prices"),
 ]
+
+# Portfolio chapter order (Project Portfolio 2026)
+_ORDER = ["water", "power", "drainage", "commercial", "industrial", "residential", "structures", "mep", "interiors", "roads", "consultancy"]
+SECTORS.sort(key=lambda s: _ORDER.index(s["slug"]))
+
+# Status as printed in the Corporate Profile 2026, Selected Projects (sheet 11). All other rows: Completed.
+REGISTER_STATUS = {5: "Ongoing", 10: "Ongoing"}
+
+# ---------------------------------------------------------------- from the Corporate Profile 2026 and Project Portfolio 2026
+PROFILE = dict(
+  mission="To deliver buildings and infrastructure of dependable quality: on programme, on budget, and exactly as specified.",
+  vision="To be the most trusted delivery partner for Nigerians building at home, wherever in the world they live.",
+  how="Lean, technology-enabled teams; transparent milestones; independent escrow; strict confidentiality.",
+  md_quote=("We built Artizanni to prove a simple thing: a home, a road or a building can be delivered exactly as promised, "
+            "even when the owner is on another continent. Certainty is the product."),
+  story=["Artizanni was incorporated in Abuja in 2012 as a general contractor. What we became was set less by strategy than by the "
+         "work that came in: earthworks for a transmission substation, then a transformer plinth, then a cofferdam in a live river, "
+         "then housing, then retail, then the drainage and reclamation schemes that now occupy much of our plant.",
+         "Each of those moves taught us something we could not subcontract: how a barrage behaves when you dewater it, how a 60MVA "
+         "transformer arrives and what it will not forgive, how a retail programme collapses if the ductwork is drawn rather than "
+         "measured. We kept that knowledge in-house. That is why we design, quantify, programme and build, rather than doing only one of them."],
+  team=("A multidisciplinary bench of architects, civil and structural engineers, quantity surveyors and mechanical and electrical "
+        "engineers, working as one delivery team."),
+  memberships="COREN · NSE · NIA · NIQS · PMP",
+  workforce=("A trained artisan base drawn from Nigeria, Ghana and Togo, selected for close attention to finish quality, and a directly "
+             "employed site team for setting out, reinforcement, formwork and finishes."),
+  model=("Central coordination, remote project teams and lean, six-sigma-informed practice keep overheads low and quality consistent on every site."),
+  coverage="Head office in Utako, Abuja, with active project delivery in Lagos and Port Harcourt, and remote delivery and reporting for clients across the diaspora.",
+  serves="Real-estate developers, corporate and security organisations, community associations, private individuals, and Nigerian professionals living abroad.",
+  nda="Every engagement is governed by a non-disclosure agreement. Client and project identities are protected as standard.",
+  payments="There are no upfront payments. Every payment is pro rata against certified progress: the client pays Artizanni, and Artizanni pays the team.",
+)
+
+PLANT = [("Wheel loader", "SDLG LG953N, owned, acquired 2021"), ("Compaction", "Vibrating rollers"),
+         ("Earthmoving", "Excavators and dozers, deployed with hired long-reach units where needed"),
+         ("Fabrication", "In-house sheet-metal ductwork"), ("Supply partner", "SMT Nigeria Ltd")]
+
+NUMBERS = [("132/33", "kV class of transmission substations served with civil works"),
+           ("1,800m", "Perimeter fence built at a transmission substation"),
+           ("1,680", "Student-village beds taken through full feasibility and design"),
+           ("60MVA", "Transformer foundation designed and built")]
+
+# Three-stage journey (Corporate Profile, sheet 06)
+JOURNEY = [("Pre-contract", "Design & define", "Brief, feasibility, design and a fixed cost plan. Nothing is committed until scope and price are agreed."),
+           ("Pre-contract", "Secure & mobilise", "Proposal accepted, funds placed in escrow or trust, procurement and site mobilisation."),
+           ("Post-contract", "Build & hand over", "Construction to programme, payments released on verified milestone valuations, then handover.")]
+
+# Ways to work with us (Corporate Brochure)
+ENGAGEMENTS = [("Advisory only", "Transaction advisory, title and technical due diligence, and investment appraisal as a standalone service."),
+               ("Design & engineering", "Architecture and engineering packages for clients building with their own contractor."),
+               ("Design & build", "One contract from concept through certified handover."),
+               ("Turnkey from abroad", "End to end for remote owners: acquire, design, build and manage, with escrow-backed milestones."),
+               ("Management only", "Property and facility management for buildings you already own.")]
+
+# Selected clients & partners (Corporate Profile, sheet 10)
+CLIENTS = [("Rhuoga Energy Limited", "Power · transmission"), ("Novatis Estates Limited", "Real estate · PPP"),
+           ("Ogun State Waterworks", "Water · AFD-funded"), ("Wiz Engineering", "Oil & gas"),
+           ("West Transmission Line Network", "HV transmission"), ("Dolphin Estate Muslim Community", "Community"),
+           ("Isaac Udezue & Associates", "Dams · water"), ("Enamux Design Associates", "Dams · water"),
+           ("Poadit Constructions Ltd", "Foundations")]
