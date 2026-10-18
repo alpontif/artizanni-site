@@ -4,8 +4,8 @@
  "start_url": "/?src=app",
  "scope": "/",
  "display": "standalone",
- "background_color": "#F1F0EB",
- "theme_color": "#252262",
+ "background_color": "#FAF7F2",
+ "theme_color": "#1A1A1A",
  "description": "Artizanni is an Abuja-based design-build firm (RC 1065469, since 2012): architecture, civil, structural and MEP engineering, construction, interiors, real estate, project and property management, and an escrow-backed property service for Nigerians abroad.",
  "icons": [
   {

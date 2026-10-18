@@ -26,16 +26,15 @@ E = lambda s: html.escape(str(s), quote=True)
 h = hashlib.sha1()
 for f in ("style.css", "app.js", "pwa.js"):
     b = (ROOT / "src" / f).read_bytes(); h.update(b); (DOCS / "assets" / f).write_bytes(b)
-shutil.rmtree(DOCS / "assets/fonts", ignore_errors=True); shutil.copytree(ROOT / "src/fonts", DOCS / "assets/fonts")
 h.update((ROOT / "src/content.py").read_bytes())
 V = h.hexdigest()[:10]
 
 PAGES = []   # (path, title, priority) for sitemap / llms
 
 # ------------------------------------------------------------------ icons (inline SVG)
-MARK = ('<svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="2" fill="#252262"/>'
-        '<path d="M20 8.5 31.5 31.5h-23z" fill="none" stroke="#F4F3FA" stroke-width="2.6" stroke-linejoin="miter"/>'
-        '<path d="M13.4 24.8h13.2" stroke="#F06A2E" stroke-width="2.6"/><path d="M20 12v18" stroke="#A9DBF0" stroke-width="1.2"/></svg>')
+MARK = ('<svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="3" fill="#1A1A1A"/>'
+        '<path d="M20 8.5 31.5 31.5h-23z" fill="none" stroke="#C9973A" stroke-width="2.6" stroke-linejoin="miter"/>'
+        '<path d="M13.6 24.8h12.8" stroke="#C9973A" stroke-width="2.2"/><path d="M20 12v18" stroke="#C9973A" stroke-width="1" opacity=".6"/></svg>')
 WA = ('<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.3 21.8l4.9-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7c-1.5 0-3-.4-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>')
 ARW = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 I = lambda d: f'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{d}</svg>'
@@ -97,7 +96,7 @@ def crumbs_ld(trail):
     return {"@type": "BreadcrumbList", "itemListElement": items}
 
 def cta(R, title="Tell us about your project.", text="Answer a few questions and send them to us on WhatsApp or email. You get a reference number straight away.", sub="", label="Start a project"):
-    return f'''<section class="cta"><div class="deco" aria-hidden="true"><i style="left:0;top:8px;width:46%;background:#4CB3A0"></i><i style="left:30%;top:36px;width:40%;background:#A9DBF0;opacity:.9"></i><i style="left:52%;top:64px;width:36%;background:#EE4E3C"></i><i style="left:74%;top:92px;width:26%;background:#F06A2E"></i></div><div class="wrap"><div><p class="eyebrow">Next step</p><h2>{E(title)}</h2><p>{E(text)}</p></div>
+    return f'''<section class="cta"><div class="wrap"><div><p class="eyebrow">Next step</p><h2>{E(title)}</h2><p>{E(text)}</p></div>
 <div class="btns"><a class="btn btn-gold" href="{R}start/{sub}">{label} {ARW}</a><a class="btn btn-line" data-wa-quick href="https://wa.me/{SITE["whatsapp"]}">{WA}Chat on WhatsApp</a></div></div></section>'''
 
 ORG_ID = BASE + "#org"
@@ -140,14 +139,14 @@ def page(path, title, desc, body, active=None, ld=None, og=None, hero_pre="", no
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{canon}">
 {'<meta name="robots" content="noindex">' if noindex else ''}
-<meta name="theme-color" content="#252262">
+<meta name="theme-color" content="#1A1A1A">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Artizanni"><meta property="og:locale" content="en_NG">
 <meta property="og:title" content="{E(full_title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{canon}"><meta property="og:image" content="{ogimg}">
 <meta name="twitter:card" content="summary_large_image">
 {verif}
 <link rel="icon" href="{R}favicon.png" type="image/png"><link rel="apple-touch-icon" href="{R}icons/apple-touch-icon.png"><link rel="manifest" href="{R}manifest.webmanifest">
-<link rel="preload" href="{R}assets/fonts/source-serif-4-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{R}assets/fonts/libre-franklin-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="{R}assets/style.css?v={V}">
 <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)}</script>
 </head>
@@ -189,38 +188,11 @@ def page(path, title, desc, body, active=None, ld=None, og=None, hero_pre="", no
     return R
 
 def phead(R, trail, eyebrow, h1, lede="", photo=None, extra=""):
-    path = trail[-1][1]
-    banner = f'<figure class="banner">{fig(R, photo, "", sizes="(max-width:1240px) 100vw, 1200px")[8:-9]}</figure>' if photo else ""
-    return (f'<section class="phead"><div class="wrap">'
-            f'{sheet_head(eyebrow, "Artizanni Business Services Ltd", SITE["tagline"], trail[0][0], folio(path))}'
-            f'{crumbs(R, trail)}<h1>{E(h1)}</h1>{f"<p class=lede>{E(lede)}</p>" if lede else ""}{extra}{banner}</div></section>')
-
-TOP = {"": "01", "services/": "02", "projects/": "03", "diaspora/": "04", "about/": "05", "start/": "06", "contact/": "07", "privacy/": "08", "requests/": "09"}
-def folio(path):
-    if path in TOP: return TOP[path]
-    if path.startswith("services/"):
-        return "02." + str([x["slug"] for x in SERVICES].index(path.split("/")[1]) + 1)
-    if path.startswith("projects/"):
-        return "03." + str([x["slug"] for x in SECTORS].index(path.split("/")[1]) + 1)
-    return ""
-
-def sheet_head(label, sub, note, section, fol):
-    return (f'<div class="sheet-head"><div><b>{E(label)}</b><span>{E(sub)}</span></div>'
-            f'<div class="glyph" aria-hidden="true"><i></i><i></i><i></i><i></i></div>'
-            f'<div class="sh-note">{E(note)}</div><div><b>{E(section)}</b></div><div class="folio">{E(fol)}</div></div>')
-
-def gantt(title, note, cols, rows, heading="h2", loose=False):
-    """cols: [(label, sublabel)]; rows: dict(x, w, c, label, sub, ms, end) with x/w in % of the chart width."""
-    colh = "".join(f'<div>{E(a)}{f"<small>{E(b)}</small>" if b else ""}</div>' for a, b in cols)
-    rh = []
-    for k, r in enumerate(rows):
-        st = f'--x:{r["x"]}%;--w:{r["w"]}%;--c:var(--{r["c"]});--d:{0.12 * k:.2f}s'
-        lab = f'<span class="g-lab{" end" if r.get("end") else ""}">{E(r["label"])}{f" <small>{E(r["sub"])}</small>" if r.get("sub") else ""}</span>'
-        ms = '<i class="g-ms" aria-hidden="true"></i>' if r.get("ms") else ""
-        rh.append(f'<div class="g-row" style="{st}"><span class="g-bar" aria-hidden="true"></span>{ms}{lab}</div>')
-    return (f'<figure class="gantt{" loose" if loose else ""}"><div class="gantt-title"><{heading}>{E(title)}</{heading}><p>{E(note)}</p></div>'
-            f'<div class="gantt-body" style="--cols:{len(cols)}"><div class="gantt-cols" aria-hidden="true">{colh}</div>'
-            f'<div class="gantt-rows">{"".join(rh)}</div></div></figure>')
+    if photo:
+        return (f'<section class="phead phead-photo">{pic(R, photo, eager=True, sizes="100vw")}<div class="wrap">{crumbs(R, trail)}'
+                f'<p class="eyebrow">{E(eyebrow)}</p><h1>{E(h1)}</h1>{f"<p class=lede>{E(lede)}</p>" if lede else ""}{extra}</div></section>')
+    return (f'<section class="phead"><div class="wrap">{crumbs(R, trail)}<p class="eyebrow">{E(eyebrow)}</p><h1>{E(h1)}</h1>'
+            f'{f"<p class=lede>{E(lede)}</p>" if lede else ""}{extra}</div></section>')
 
 def faq_html(items):
     return "".join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in items)
@@ -249,28 +221,16 @@ def build_home():
     for i, s in enumerate([x for x in SERVICES if x["slug"] != "secure-spaces"], 1):
         svc_cards.append(f'<a class="svc" href="{R}services/{s["slug"]}/"><span class="no">{i:02d}</span>{ICONS[s["icon"]]}<h3>{E(s["name"])}</h3><p>{E(s["short"])}</p><span class="more">Read more {ARW}</span></a>')
     svc_cards.insert(0, f'<a class="svc feature" href="{R}diaspora/"><span class="no">00</span>{ICONS["globe"]}<h3>Build from abroad</h3><p>{E(DIASPORA["short"])}</p><span class="more">How escrow works {ARW}</span></a>')
-    sectors = "".join(f'<a class="sector" href="{R}projects/{s["slug"]}/"><div class="ph">{pic(R, s["hero"], sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 25vw")}</div><span class="bar"></span><h3>{E(s["name"])}</h3><p>{E(s["standfirst"])}</p></a>' for s in SECTORS[:8])
-    COLS = [("Pre-contract", "Design & define"), ("Pre-contract", "Secure & mobilise"), ("Post-contract", "Build"), ("Post-contract", "Hand over & care")]
-    BARS = [dict(x=0, w=17, c="b1", label="01 Brief & feasibility"), dict(x=13, w=19, c="b2", label="02 Design"),
-            dict(x=24, w=19, c="b3", label="03 Quantities & programme"), dict(x=45, w=33, c="b4", label="04 Construction", sub="released on verified milestones", ms=True),
-            dict(x=74, w=11, c="b5", label="05 Handover"), dict(x=82, w=18, c="b6", label="06 Aftercare", end=True)]
-    COL = ["b1", "b2", "b3", "b4", "b5", "b6"]
-    legend = "".join(f'<div style="--c:var(--{COL[k]})"><b><i></i>{E(t)}</b><p>{E(d)}</p></div>' for k, (n, t, d) in enumerate(STAGES))
-    facts = [("b1", "Registered", "RC 1065469"), ("b3", "Established", "2012, Abuja"), ("b4", "Engineer of record", "COREN R29685"),
-             ("b6", "Escrow partner", "First Trustees"), ("b5", "Paid up front", "₦0")]
-    hero = f'''<section class="hero"><div class="wrap">
-{sheet_head("Artizanni", "Design-build since 2012", "Architecture, engineering, construction, interiors and real estate under one accountable contract, from land to keys.", "Programme sheet", "01")}
-<div class="hero-grid"><div>
-<h1>Designed, engineered and built <em>by one accountable team.</em></h1>
-<p class="lede">Led by a COREN-registered engineer. What is agreed on paper is what is delivered on site, and for Nigerians abroad, your money stays in escrow until each stage is verified.</p>
-<div class="btns"><a class="btn btn-gold" href="{R}start/">Start a project {ARW}</a><a class="btn btn-line" href="{R}diaspora/">Build from abroad</a></div></div>
-<ul class="keyfacts">{"".join(f'<li style="--c:var(--{c})"><i></i><span>{E(a)}</span><b>{E(b)}</b></li>' for c, a, b in facts)}</ul>
-</div>
-{gantt("From brief to keys", "How an Artizanni design-and-build project runs. The sequence is fixed; durations are set for your project at stage 03, and every construction payment waits for a verified milestone (◆).", COLS, BARS)}
-<div class="gantt-legend">{legend}</div>
-</div>
-<div class="wrap band">{fig(R, "reclaim-aerial", "", sizes="(max-width:1240px) 100vw, 1200px")}</div>
-</section>'''
+    sectors = "".join(f'<a class="sector" href="{R}projects/{s["slug"]}/"><div class="ph">{pic(R, s["hero"], sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 25vw")}</div><h3>{E(s["name"])}</h3><p>{E(s["standfirst"])}</p></a>' for s in SECTORS[:8])
+    steps = "".join(f'<li><b>{n}</b><h3>{E(t)}</h3><p>{E(d)}</p></li>' for n, t, d in STAGES)
+    hero = f'''<section class="hero">{pic(R, "reclaim-aerial", eager=True, sizes="100vw", alt="Aerial view of land reclamation works by Artizanni in Lagos")}
+<p class="hero-cap">{E(PH["reclaim-aerial"]["caption"])}</p>
+<div class="wrap"><p class="eyebrow">Design-build firm · Abuja · Since 2012</p>
+<h1>Designed, engineered and built by one accountable team.</h1>
+<p class="lede">Architecture, civil, structural and MEP engineering, construction, interiors and real estate, led by a COREN-registered engineer. For Nigerians abroad, your money stays in escrow until each stage is verified.</p>
+<div class="btns"><a class="btn btn-gold" href="{R}start/">Start a project {ARW}</a><a class="btn btn-line" href="{R}diaspora/">Build from abroad</a></div>
+<dl class="titleblock"><div><dt>Registered</dt><dd>RC 1065469</dd></div><div><dt>Established</dt><dd>2012, Abuja</dd></div><div><dt>Engineer of record</dt><dd>COREN R29685</dd></div><div><dt>Escrow partner</dt><dd>First Trustees</dd></div></dl>
+</div></section>'''
     body = f'''
 <section class="s" style="padding-bottom:0"><div class="wrap">
 <div class="stats"><div><b>2012</b><span>Incorporated in Abuja (RC 1065469)</span></div><div><b>26<em>+</em></b><span>Engagements in our recorded contracting register</span></div><div><b>11</b><span>Sectors of delivered work, from marine civils to retail fit-out</span></div><div><b>₦0</b><span>Taken up front. Every payment follows certified progress</span></div></div>
@@ -296,9 +256,13 @@ def build_home():
 {clients_strip()}
 </div></section>
 
+<section class="s dark"><div class="wrap">
+<div class="shead"><div><p class="eyebrow">03 / How a project runs</p><h2>Six stages. Evidence at every one.</h2><p class="lede">Each stage ends with something you can check: a report, a drawing set, a priced bill, an inspection record or a handover file.</p></div></div>
+<ol class="steps">{steps}</ol>
+</div></section>
 
 <section class="s"><div class="wrap split">
-<div><p class="eyebrow">03 / Build from abroad</p><h2>Your money moves only when the work is proven.</h2>
+<div><p class="eyebrow">04 / Build from abroad</p><h2>Your money moves only when the work is proven.</h2>
 <p class="lede">Too many Nigerians abroad have sent money home for a house that was never built. Our diaspora service removes the need for trust.</p>
 <ul class="ticks"><li>Funds are held by <b>First Trustees</b> in escrow, not paid to us up front.</li><li>Release happens per milestone (M0 to M8), against a verification pack with geotagged photos, video, test results and a QS valuation.</li><li>Title is checked by a lawyer and surveyor before any money goes into land.</li><li>Weekly reports and calls in your time zone.</li></ul>
 <div class="btns"><a class="btn btn-ink" href="{R}diaspora/">How it works {ARW}</a><a class="btn btn-line" href="{R}start/?service=diaspora">Book a discovery call</a></div></div>
@@ -307,7 +271,7 @@ def build_home():
 
 {md_quote(R)}
 <section class="s alt"><div class="wrap">
-<div class="shead"><div><p class="eyebrow">04 / Why clients appoint us</p><h2>Engineers who build, builders who document.</h2></div></div>
+<div class="shead"><div><p class="eyebrow">05 / Why clients appoint us</p><h2>Engineers who build, builders who document.</h2></div></div>
 <div class="grid g4">
 <div><h3>Engineer-led</h3><p class="muted">The practice is led by {E(SITE["md"])}, a COREN-registered civil and structural engineer (MNSE, PMP). Designs are sealed by registered professionals.</p></div>
 <div><h3>Priced by people who build</h3><p class="muted">The team that designs your project also prepares the bill of quantities and the programme, so drawings, cost and site agree.</p></div>
@@ -356,7 +320,7 @@ def build_services():
 </div></section>
 {f'<section class="s alt" style="padding-top:56px;padding-bottom:56px"><div class="wrap"><div class="grid g3">{strip}</div></div></section>' if strip else ''}
 {form_extra}
-{('<section class="s"><div class="wrap"><p class="eyebrow">Related work</p><div class="grid g4">' + "".join(f'<a class="sector" href="{R}projects/{x["slug"]}/"><div class="ph">{pic(R, x["hero"], sizes="25vw")}</div><span class="bar"></span><h3>{E(x["name"])}</h3><p>{E(x["standfirst"])}</p></a>' for x in rel) + '</div></div></section>') if rel else ''}
+{('<section class="s"><div class="wrap"><p class="eyebrow">Related work</p><div class="grid g4">' + "".join(f'<a class="sector" href="{R}projects/{x["slug"]}/"><div class="ph">{pic(R, x["hero"], sizes="25vw")}</div><h3>{E(x["name"])}</h3><p>{E(x["standfirst"])}</p></a>' for x in rel) + '</div></div></section>') if rel else ''}
 {cta(R, sub="?service=" + s["slug"]) if s["slug"] != "secure-spaces" else ""}'''
         ld = [crumbs_ld(trail), {"@type": "Service", "name": s["name"], "serviceType": s["name"], "description": s["short"] + " " + s["intro"],
                "provider": {"@id": ORG_ID}, "areaServed": {"@type": "Country", "name": "Nigeria"}, "url": BASE + path}]
@@ -394,7 +358,7 @@ def register_table(rows, filters=True):
 
 def build_projects():
     path = "projects/"; R = root_for(path); trail = [("Projects", path)]
-    cards = "".join(f'<a class="sector" href="{R}projects/{s["slug"]}/"><div class="ph">{pic(R, s["hero"], sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 33vw")}</div><span class="bar"></span><h3>{E(s["name"])}<small>{len(sector_photos(s["slug"]))} photos</small></h3><p>{E(s["standfirst"])}</p></a>' for s in SECTORS)
+    cards = "".join(f'<a class="sector" href="{R}projects/{s["slug"]}/"><div class="ph">{pic(R, s["hero"], sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 33vw")}</div><h3>{E(s["name"])}<small>{len(sector_photos(s["slug"]))} photos</small></h3><p>{E(s["standfirst"])}</p></a>' for s in SECTORS)
     nums = "".join(f'<div><b>{E(a)}</b><span>{E(b)}</span></div>' for a, b in NUMBERS)
     body = phead(R, trail, "Projects", "Built, not rendered.",
                  "Eleven sectors of delivered work, from cofferdams in live rivers to fitted-out retail floors. The photographs are from our own sites, most taken by the people running them. Reinforcement is shown before it is covered, and mud where there was mud.") + f'''
@@ -432,29 +396,23 @@ def build_projects():
 # ================================================================== DIASPORA
 FLOW_SVG = '''<svg class="flow" viewBox="0 0 980 300" role="img" aria-labelledby="flowT flowD">
 <title id="flowT">How your money moves</title><desc id="flowD">You pay into an escrow account held by First Trustees. Artizanni builds and submits a milestone verification pack. Only when the milestone is verified does First Trustees release that stage's funds to Artizanni.</desc>
-<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#2B5AAE"/></marker></defs>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#C9973A"/></marker></defs>
 <g font-size="15" fill="currentColor">
-<rect x="10" y="90" width="220" height="110" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35"/>
+<rect x="10" y="90" width="220" height="110" rx="4" fill="none" stroke="currentColor" stroke-opacity=".35"/>
 <text x="120" y="135" text-anchor="middle" font-weight="700" font-size="18">You</text><text x="120" y="160" text-anchor="middle" opacity=".7">anywhere in the world</text>
-<rect x="380" y="70" width="220" height="150" rx="2" fill="#A9DBF0" fill-opacity=".45" stroke="#2B5AAE" stroke-width="2"/><rect x="380" y="70" width="90" height="8" fill="#F06A2E"/>
+<rect x="380" y="70" width="220" height="150" rx="4" fill="#C9973A" fill-opacity=".14" stroke="#C9973A" stroke-width="2"/>
 <text x="490" y="128" text-anchor="middle" font-weight="700" font-size="18">First Trustees</text><text x="490" y="153" text-anchor="middle" opacity=".75">escrow account</text><text x="490" y="176" text-anchor="middle" opacity=".75">holds funds until release</text>
-<rect x="750" y="90" width="220" height="110" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35"/>
+<rect x="750" y="90" width="220" height="110" rx="4" fill="none" stroke="currentColor" stroke-opacity=".35"/>
 <text x="860" y="135" text-anchor="middle" font-weight="700" font-size="18">Artizanni</text><text x="860" y="160" text-anchor="middle" opacity=".7">builds your project</text>
-<path d="M232 145H372" stroke="#2B5AAE" stroke-width="2.5" marker-end="url(#ah)"/><text x="302" y="134" text-anchor="middle" font-size="13" opacity=".8">1. You fund</text>
+<path d="M232 145H372" stroke="#C9973A" stroke-width="2.5" marker-end="url(#ah)"/><text x="302" y="134" text-anchor="middle" font-size="13" opacity=".8">1. You fund</text>
 <path d="M860 88V40H500v22" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ah)"/><text x="680" y="32" text-anchor="middle" font-size="13" opacity=".8">2. Milestone verification pack (photos, video, tests, QS valuation)</text>
-<path d="M602 175H742" stroke="#2B5AAE" stroke-width="2.5" marker-end="url(#ah)"/><text x="672" y="200" text-anchor="middle" font-size="13" opacity=".8">3. Stage released</text>
+<path d="M602 175H742" stroke="#C9973A" stroke-width="2.5" marker-end="url(#ah)"/><text x="672" y="200" text-anchor="middle" font-size="13" opacity=".8">3. Stage released</text>
 <path d="M860 202v48H120v-44" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5" marker-end="url(#ah)"/><text x="490" y="272" text-anchor="middle" font-size="13" opacity=".8">Weekly report and video to you, every week, in your time zone</text>
 </g></svg>'''
 
 def build_diaspora():
     path = "diaspora/"; R = root_for(path); trail = [("Build from abroad", path)]
-    MS_SHORT = ["Title & permit", "Foundation", "Ground slab", "Frame to roof", "Roof covered", "First fix & plaster", "Finishes & externals", "Handover", "End of defects period"]
-    MS_POS = [(0, 12, "b5"), (8, 14, "b1"), (18, 10, "b2"), (24, 22, "b3"), (42, 8, "b4"), (46, 16, "b6"), (58, 18, "b5"), (74, 8, "b1"), (80, 20, "b2")]
-    ms_rows = [dict(x=x, w=w, c=c, label=f"{MILESTONES[k][0]} {MS_SHORT[k]}", ms=True, end=x > 55) for k, (x, w, c) in enumerate(MS_POS)]
-    ms_chart = gantt("Release schedule", "Default schedule; exact milestones and values are set in your contract and escrow deed. ◆ marks an escrow release, made only after the verification pack for that stage is accepted.",
-                     [("Title & approvals", ""), ("Substructure", ""), ("Frame & roof", ""), ("Fit-out", ""), ("Handover & DLP", "")], ms_rows, heading="h3", loose=True)
-    ev = "".join(f'<tr style="--c:var(--{MS_POS[k][2]})"><td>{m}</td><td>{E(t)}</td><td>{E(e)}</td></tr>' for k, (m, t, e) in enumerate(MILESTONES))
-    ms = ms_chart + f'<div style="overflow-x:auto"><table class="ev"><thead><tr><th>Release</th><th>Milestone</th><th>Evidence in the verification pack</th></tr></thead><tbody>{ev}</tbody></table></div>'
+    ms = "".join(f'<li><b>{m}</b><h3>{E(t)}</h3><p>Evidence: {E(e)}</p></li>' for m, t, e in MILESTONES)
     steps = [("01", "Discovery call", "In your time zone: your plans, budget, location and timing."),
              ("02", "Due diligence", "Identity and source-of-funds checks (we are SCUML-registered), then an engagement letter."),
              ("03", "Title check", "Lawyer and surveyor verify the land. You get a go / no-go report before any land money moves."),
@@ -471,7 +429,7 @@ def build_diaspora():
 </div></section>
 <section class="s alt" id="how"><div class="wrap"><div class="shead"><div><p class="eyebrow">How your money moves</p><h2>Escrow first, evidence always.</h2><p class="lede">{E(PROFILE["payments"])}</p></div></div>{FLOW_SVG}
 <div style="margin-top:48px"><p class="eyebrow">The three-stage journey</p>{journey_html()}</div></div></section>
-<section class="s"><div class="wrap"><div class="shead"><div><p class="eyebrow">Milestones</p><h2>Nine release points, each with its own evidence.</h2><p class="lede">Our default schedule. The exact milestones and values are set in your contract and escrow deed.</p></div></div>{ms}</div></section>
+<section class="s"><div class="wrap"><div class="shead"><div><p class="eyebrow">Milestones</p><h2>Nine release points, each with its own evidence.</h2><p class="lede">Our default schedule. The exact milestones and values are set in your contract and escrow deed.</p></div></div><ol class="ms">{ms}</ol></div></section>
 <section class="s dark"><div class="wrap"><div class="shead"><div><p class="eyebrow">Getting started</p><h2>From first call to first release</h2></div></div><ol class="steps">{"".join(f"<li><b>{n}</b><h3>{E(t)}</h3><p>{E(d)}</p></li>" for n, t, d in steps)}</ol></div></section>
 <section class="s"><div class="wrap split"><div><p class="eyebrow">What you receive</p><h2>Reporting you can check from anywhere</h2>
 <ul class="ticks"><li>Weekly written report with dated photographs and a short video walk-through</li><li>A Milestone Verification Pack before every release: geotagged photos, video, inspection and test records, QS valuation</li><li>Scheduled calls in your time zone</li><li>Handover file: as-built drawings, test certificates, manuals and keys</li><li>Optional property management after handover</li></ul></div>
@@ -663,7 +621,7 @@ def build_kit():
     urls = "".join(f'<url><loc>{BASE}{p}</loc><lastmod>{TODAY}</lastmod><priority>{pr}</priority></url>' for p, t, d, pr in PAGES)
     (DOCS / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
     man = {"name": "Artizanni — design, engineer, build", "short_name": "Artizanni", "start_url": "/?src=app", "scope": "/", "display": "standalone",
-           "background_color": "#F1F0EB", "theme_color": "#252262", "description": SITE["description"],
+           "background_color": "#FAF7F2", "theme_color": "#1A1A1A", "description": SITE["description"],
            "icons": [{"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
                      {"src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}],
            "shortcuts": [{"name": "Start a project", "url": "/start/"}, {"name": "Build from abroad", "url": "/diaspora/"}, {"name": "My requests", "url": "/requests/"}]}
