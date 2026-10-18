@@ -112,7 +112,8 @@ ORG = {
               "hasCredential": [{"@type": "EducationalOccupationalCredential", "credentialCategory": "Professional registration", "recognizedBy": {"@type": "Organization", "name": "COREN"}, "identifier": "R29685"}]},
   "knowsAbout": ["Design and build", "Architecture", "Structural engineering", "Civil engineering", "MEP engineering", "Interior design and fit-out",
                  "Land due diligence", "Project management", "Property management", "Escrow-backed construction for diaspora clients"],
-  "contactPoint": [{"@type": "ContactPoint", "contactType": "sales", "telephone": SITE["phone_href"], "email": SITE["email"], "areaServed": "NG", "availableLanguage": ["en"]}],
+  "contactPoint": [{"@type": "ContactPoint", "contactType": "sales", "telephone": SITE["phone_href"], "email": SITE["email"], "areaServed": "NG", "availableLanguage": ["en"]},
+                   {"@type": "ContactPoint", "contactType": "customer service", "telephone": SITE["phone_href"], "email": SITE["alt_email"], "areaServed": "NG", "availableLanguage": ["en"]}],
 }
 
 NAV = [("Services", "services/"), ("Projects", "projects/"), ("Build from abroad", "diaspora/"), ("About", "about/"), ("Contact", "contact/")]
@@ -127,7 +128,7 @@ def page(path, title, desc, body, active=None, ld=None, og=None, hero_pre="", no
     verif = ""
     if CFG.get("google_site_verification"): verif += f'<meta name="google-site-verification" content="{E(CFG["google_site_verification"])}">'
     if CFG.get("bing_site_verification"): verif += f'<meta name="msvalidate.01" content="{E(CFG["bing_site_verification"])}">'
-    art = json.dumps({"wa": SITE["whatsapp"], "email": SITE["email"], "root": R, "ga": CFG.get("ga4_measurement_id") or "", "waIcon": WA})
+    art = json.dumps({"wa": SITE["whatsapp"], "email": SITE["email"] + "," + SITE["alt_email"], "root": R, "ga": CFG.get("ga4_measurement_id") or "", "waIcon": WA})
     full_title = title if title.startswith("Artizanni") else f"{title} | Artizanni"
     doc = f'''<!doctype html>
 <html lang="en-NG">
@@ -164,7 +165,7 @@ def page(path, title, desc, body, active=None, ld=None, og=None, hero_pre="", no
 <div class="cols">
 <div><a class="logo" href="{R}">{MARK}<div><b>ARTIZANNI</b><span>BUSINESS SERVICES LTD</span></div></a>
 <p>Design-build, engineering, interiors and real estate. {E(SITE["address"])}.</p>
-<p><a href="tel:{SITE["phone_href"]}">{SITE["phone"]}</a><br><a href="mailto:{SITE["email"]}">{SITE["email"]}</a></p></div>
+<p><a href="tel:{SITE["phone_href"]}">{SITE["phone"]}</a><br><a href="mailto:{SITE["email"]}">{SITE["email"]}</a><br><a href="mailto:{SITE["alt_email"]}">{SITE["alt_email"]}</a></p></div>
 <div><h4>Services</h4><ul>{"".join(f'<li><a href="{R}services/{s["slug"]}/">{E(s["name"])}</a></li>' for s in SERVICES)}<li><a href="{R}diaspora/">Build from abroad</a></li></ul></div>
 <div><h4>Company</h4><ul><li><a href="{R}projects/">Projects</a></li><li><a href="{R}about/">About</a></li><li><a href="{R}start/">Start a project</a></li><li><a href="{R}contact/">Contact</a></li><li><a href="{R}requests/">My requests</a></li><li><a href="{R}privacy/">Privacy notice</a></li><li><a href="#" data-install hidden>Install the app</a></li></ul></div>
 <div><h4>Group companies</h4><ul>{"".join(f'<li><a href="{u}" rel="noopener">{E(n)}</a><br><span>{E(d)}</span></li>' for n, u, d in GROUP)}</ul></div>
@@ -541,7 +542,7 @@ def build_start():
 </form>
 <div class="form" data-out hidden style="margin-top:16px" aria-live="polite"></div></div>
 <aside><div style="position:sticky;top:96px"><p class="eyebrow">What happens next</p><ol class="ticks" style="list-style:none"><li>You send the message from your own WhatsApp or email.</li><li>We reply, usually with a few questions and a time for a call or site visit.</li><li>For larger projects we propose a brief and feasibility stage with a fixed fee before design.</li></ol>
-<div class="note small">Prefer to talk? Call <a href="tel:{SITE["phone_href"]}">{SITE["phone"]}</a> or email <a href="mailto:{SITE["email"]}">{SITE["email"]}</a>.</div>
+<div class="note small">Prefer to talk? Call <a href="tel:{SITE["phone_href"]}">{SITE["phone"]}</a> or email <a href="mailto:{SITE["email"]}">{SITE["email"]}</a> or <a href="mailto:{SITE["alt_email"]}">{SITE["alt_email"]}</a>.</div>
 <p class="small muted" style="margin-top:14px">Your requests are listed on <a href="{R}requests/">My requests</a> on this device.</p></div></aside>
 </div></section>
 <script>
@@ -560,6 +561,7 @@ def build_contact():
 <a class="cline" data-wa-quick="Contact page" href="https://wa.me/{SITE["whatsapp"]}" target="_blank" rel="noopener">{WA.replace("<svg", "<svg class=\"ic\" style=\"width:22px;height:22px;color:#1FA855\"")}<div><b>WhatsApp</b><span>{SITE["phone"]}</span></div></a>
 <a class="cline" href="tel:{SITE["phone_href"]}">{ICONS["phone"]}<div><b>Call</b><span>{SITE["phone"]}</span></div></a>
 <a class="cline" href="mailto:{SITE["email"]}">{ICONS["mail"]}<div><b>Email</b><span>{SITE["email"]}</span></div></a>
+<a class="cline" href="mailto:{SITE["alt_email"]}">{ICONS["mail"]}<div><b>Email (alternative)</b><span>{SITE["alt_email"]}</span></div></a>
 <a class="cline" href="{maps}" target="_blank" rel="noopener">{ICONS["pin"]}<div><b>Head office</b><span>{E(SITE["address"])}<br>Visits by appointment. Open in Google Maps.</span></div></a>
 <p class="small muted">Artizanni Business Services Limited · RC 1065469</p>
 </div>
@@ -573,7 +575,7 @@ def build_contact():
 </form><div class="form" data-out hidden style="margin-top:16px" aria-live="polite"></div></div>
 </div></section>'''
     ld = [crumbs_ld(trail), {"@type": "ContactPage", "url": BASE + path, "about": {"@id": ORG_ID}}]
-    page(path, "Contact", f"Contact Artizanni in Utako, Abuja: WhatsApp or call {SITE['phone']}, email {SITE['email']}.", body, active=path, ld=ld, prio="0.8")
+    page(path, "Contact", f"Contact Artizanni in Utako, Abuja: WhatsApp or call {SITE['phone']}, email {SITE['email']} or {SITE['alt_email']}.", body, active=path, ld=ld, prio="0.8")
 
 def build_requests():
     path = "requests/"; R = root_for(path)
@@ -585,7 +587,7 @@ def build_privacy():
     path = "privacy/"; R = root_for(path); trail = [("Privacy notice", path)]
     body = phead(R, trail, "Privacy notice", "How we handle your information.", f"Last updated {datetime.date.today().strftime('%d %B %Y')}.") + f'''
 <section class="s"><div class="wrap prose">
-<h2>Who we are</h2><p>Artizanni Business Services Limited (RC 1065469), {E(SITE["address"])}, is the data controller for information collected through artizanni.com. Contact: <a href="mailto:{SITE["email"]}">{SITE["email"]}</a>.</p>
+<h2>Who we are</h2><p>Artizanni Business Services Limited (RC 1065469), {E(SITE["address"])}, is the data controller for information collected through artizanni.com. Contact: <a href="mailto:{SITE["email"]}">{SITE["email"]}</a> or <a href="mailto:{SITE["alt_email"]}">{SITE["alt_email"]}</a>.</p>
 <h2>What this website collects</h2><p>This website does not send form answers to a server. When you use a form, your browser assembles a message that <b>you</b> choose to send to us on WhatsApp or by email. We receive only what you send.</p>
 <p>A copy of each message you prepare is stored in your own browser (local storage) so you can reopen it on the <a href="{R}requests/">My requests</a> page. You can clear it at any time by clearing this site's data in your browser.</p>
 <p>If analytics is switched on, we ask for your consent first and use Google Analytics with IP anonymisation to count visits and clicks. If you decline, no analytics script is loaded.</p>
@@ -648,7 +650,7 @@ self.addEventListener("fetch", ev => {{
     lines = [f"# Artizanni Business Services Limited", "", f"> {SITE['description']}", "",
              f"- Registered: CAC RC 1065469, incorporated 17 September 2012", f"- Head office: {SITE['address']}",
              f"- Managing Director: {SITE['md']}, {SITE['md_post']}", "- Escrow partner for diaspora clients: First Trustees",
-             f"- Contact: WhatsApp/phone {SITE['phone']}, {SITE['email']}", "", "## Pages", ""]
+             f"- Contact: WhatsApp/phone {SITE['phone']}, {SITE['email']}, {SITE['alt_email']}", "", "## Pages", ""]
     lines += [f"- [{t}]({BASE}{p}): {d}" for p, t, d, pr in PAGES]
     (DOCS / "llms.txt").write_text("\n".join(lines) + "\n")
     full = lines + ["", "## Services", ""] + [f"### {s['name']}\n{s['short']} {s['intro']}\n" + "\n".join(f"- {x}" for x in s["items"]) + "\n" for s in SERVICES]

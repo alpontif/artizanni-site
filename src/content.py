@@ -20,9 +20,9 @@ SITE = {
     "locality": "Utako, Abuja",
     "region": "FCT",
     "geo": [9.0700, 7.4400],             # Utako district centre (approximate)
-    "phone": "+234 803 920 4361",
-    "phone_href": "+2348039204361",
-    "whatsapp": "2348039204361",
+    "phone": "+234 701 802 4292",
+    "phone_href": "+2347018024292",
+    "whatsapp": "2347018024292",
     "email": "aec@artizanni.com",
     "md_email": "kola@artizanni.com",
     "alt_email": "artizanni@gmail.com",
