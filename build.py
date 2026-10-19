@@ -135,7 +135,14 @@ def page(path, title, desc, body, active=None, ld=None, og=None, hero_pre="", no
     canon = BASE + path
     ogimg = BASE + (f"img/{og}-1600.jpg" if og else "og.jpg")
     nav = "".join(f'<a href="{R}{href}"{" aria-current=\"page\"" if active == href else ""}>{n}</a>' for n, href in NAV)
-    graph = [ORG, {"@type": "WebSite", "@id": BASE + "#site", "url": BASE, "name": "Artizanni", "publisher": {"@id": ORG_ID}}]
+    org = ORG
+    website = {"@type": "WebSite", "@id": BASE + "#site", "url": BASE, "name": "Artizanni", "publisher": {"@id": ORG_ID}}
+    if path == "":
+        org = {**ORG, "name": "Artizanni", "legalName": "Artizanni Business Services Ltd", "telephone": SITE["phone"],
+               "address": {"@type": "PostalAddress", "streetAddress": SITE["street"], "addressLocality": "Utako District, Abuja",
+                           "addressRegion": "FCT", "addressCountry": "NG"}}
+        website["alternateName"] = "Artizanni Business Services"
+    graph = [org, website]
     if ld: graph += ld if isinstance(ld, list) else [ld]
     verif = ""
     if CFG.get("google_site_verification"): verif += f'<meta name="google-site-verification" content="{E(CFG["google_site_verification"])}">'
@@ -239,7 +246,7 @@ def build_home():
     hero = f'''<section class="hero">{pic(R, "reclaim-aerial", eager=True, sizes="100vw", alt="Aerial view of land reclamation works by Artizanni in Lagos")}
 <p class="hero-cap">{E(PH["reclaim-aerial"]["caption"])}</p>
 <div class="wrap"><p class="eyebrow">Design-build firm · Abuja · Since 2012</p>
-<h1>Designed, engineered and built by one accountable team.</h1>
+<h1>Artizanni: designed, engineered and built by one accountable team.</h1>
 <p class="lede">Architecture, civil, structural and MEP engineering, construction, interiors and real estate, led by a COREN-registered engineer. For Nigerians abroad, your money stays in escrow until each stage is verified.</p>
 <div class="btns"><a class="btn btn-gold" href="{R}start/">Start a project {ARW}</a><a class="btn btn-line" href="{R}diaspora/">Build from abroad</a></div>
 <dl class="titleblock"><div><dt>Registered</dt><dd>RC 1065469</dd></div><div><dt>Established</dt><dd>2012, Abuja</dd></div><div><dt>Engineer of record</dt><dd>COREN R29685</dd></div><div><dt>Escrow partner</dt><dd>First Trustees</dd></div></dl>
@@ -567,7 +574,7 @@ var sec=document.querySelector("[data-secure]");document.querySelectorAll('#wiza
 # ================================================================== CONTACT, REQUESTS, PRIVACY, 404, OFFLINE
 def build_contact():
     path = "contact/"; R = root_for(path); trail = [("Contact", path)]
-    maps = "https://www.google.com/maps/search/?api=1&query=" + "Anthony+Enahoro+Crescent+Utako+Abuja"
+    maps = "https://www.google.com/maps/search/?api=1&query=" + "Anthony+Enahoro+Street+Utako+Abuja"
     body = phead(R, trail, "Contact", "Talk to an engineer.", "WhatsApp is fastest. For confidential matters, call.") + f'''
 <section class="s"><div class="wrap split">
 <div class="cblock">

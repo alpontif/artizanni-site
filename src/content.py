@@ -15,8 +15,8 @@ SITE = {
     "rc": "RC 1065469",
     "founded": "2012",
     "incorporated": "17 September 2012",
-    "address": "No. 30 Anthony Enahoro Crescent, Utako District, Abuja, FCT, Nigeria",
-    "street": "No. 30 Anthony Enahoro Crescent",
+    "address": "No. 30 Anthony Enahoro Street, Utako District, Abuja, FCT, Nigeria",
+    "street": "No. 30 Anthony Enahoro Street",
     "locality": "Utako, Abuja",
     "region": "FCT",
     "geo": [9.0700, 7.4400],             # Utako district centre (approximate)
