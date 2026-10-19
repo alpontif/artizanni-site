@@ -118,6 +118,18 @@ ORG = {
 
 NAV = [("Services", "services/"), ("Projects", "projects/"), ("Build from abroad", "diaspora/"), ("About", "about/"), ("Contact", "contact/")]
 
+GA_ID = "G-9S4BZKWDJ5"
+GA_TAG = (
+    "<!-- Google tag (gtag.js) -->\n"
+    f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>\n'
+    "<script>\n"
+    "  window.dataLayer = window.dataLayer || [];\n"
+    "  function gtag(){dataLayer.push(arguments);}\n"
+    "  gtag('js', new Date());\n"
+    f"  gtag('config', '{GA_ID}');\n"
+    "</script>"
+)
+
 def page(path, title, desc, body, active=None, ld=None, og=None, hero_pre="", noindex=False, prio="0.7"):
     R = root_for(path)
     canon = BASE + path
@@ -133,6 +145,7 @@ def page(path, title, desc, body, active=None, ld=None, og=None, hero_pre="", no
     doc = f'''<!doctype html>
 <html lang="en-NG">
 <head>
+{GA_TAG}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{E(full_title)}</title>

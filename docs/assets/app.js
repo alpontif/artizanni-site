@@ -115,10 +115,19 @@
   }
 
   /* ---------------------------------------------------------- analytics only with consent (off unless an ID is configured) */
+  document.addEventListener("click", e => {
+    const a = e.target.closest("a[href]");
+    if (!a || typeof gtag !== "function") return;
+    const link_url = a.href;
+    if (link_url.includes("wa.me") || link_url.includes("api.whatsapp.com")) gtag("event", "whatsapp_click", { link_url });
+    else if (link_url.startsWith("mailto:")) gtag("event", "email_click", { link_url });
+  });
   if (A.ga) {
-    const load = () => { const s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + A.ga; document.head.appendChild(s);
+    const load = () => {
+      if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
+      const s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + A.ga; document.head.appendChild(s);
       window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); }; gtag("js", new Date()); gtag("config", A.ga, { anonymize_ip: true });
-      document.addEventListener("click", e => { const a = e.target.closest('a[href*="wa.me"]'); if (a) gtag("event", "whatsapp_click", { page: location.pathname }); }); };
+    };
     const c = LS.get("consent", null);
     if (c === "yes") load();
     else if (c == null) {
