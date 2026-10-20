@@ -130,6 +130,18 @@ GA_TAG = (
     "</script>"
 )
 
+# X (Twitter) base pixel, site ID rhmpt. config loads uwt.js; PageView fires on every page.
+X_PIXEL = (
+    "<!-- X pixel rhmpt -->\n"
+    "<script>\n"
+    "!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);\n"
+    "},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',\n"
+    "a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');\n"
+    "twq('config','rhmpt');\n"
+    "twq('track','PageView');\n"
+    "</script>"
+)
+
 def page(path, title, desc, body, active=None, ld=None, og=None, hero_pre="", noindex=False, prio="0.7"):
     R = root_for(path)
     canon = BASE + path
@@ -169,6 +181,7 @@ def page(path, title, desc, body, active=None, ld=None, og=None, hero_pre="", no
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="{R}assets/style.css?v={V}">
 <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)}</script>
+{X_PIXEL}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
